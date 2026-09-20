@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARCHITECT INTEZAR | Spaces for Modern Living & Luxury Interiors</title>
+  <meta name="description" content="Award-winning architectural studio & luxury interior design by Architect Intezar. Designing spaces for modern living with uncompromising detail and elegance." />
+  
+  <!-- Modern Clean Typography (Plus Jakarta Sans & Inter & Syne) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 2. ARCHITECTURAL HERO SECTION (Screenshot 1 Exact Match) -->
+  <section class="terascape-hero-section" id="hero">
+    <!-- Top Minimalist Architectural Grid Header -->
+    <header class="terascape-header">
+      <div class="header-col-brand">
+        <a href="#hero" class="terascape-brand">
+          <svg class="brand-glyph" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span class="brand-name">Architect Intezar</span>
+        </a>
+      </div>
+
+      <div class="header-col-tagline">
+        <span>Spaces for<br>modern living.</span>
+      </div>
+
+      <div class="header-col-spacer"></div>
+
+      <div class="header-col-menu">
+        <button class="explore-menu-btn" id="menuToggleBtn" aria-label="Open menu">
+          <span class="menu-label">Explore studio</span>
+          <span class="menu-icon">+ Menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Hero Architectural Grid Layout -->
+    <div class="terascape-grid">
+      <!-- Left Column: Typography & Action -->
+      <div class="hero-text-col">
+        <div class="hero-inner-content">
+          <span class="hero-kicker">DESIGNING SPACES FOR MODERN LIVING.</span>
+          <h1 class="hero-massive-title" id="heroMainTitle">Home with<br>the hearth</h1>
+          <div class="hero-btn-wrap">
+            <button class="start-project-btn open-consultation-btn">
+              <span>Start a project</span>
+              <span class="btn-square-icon">■</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-col-footer">
+          <span class="scroll-down-label">(SCROLL DOWN)</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Massive Architectural View & Interactive Slider -->
+      <div class="hero-visual-col">
+        <!-- Top Right Mission Statement in All Caps -->
+        <div class="hero-top-caps">
+          <p>UNCOMPROMISING DETAIL.<br>TAILORED ARCHITECTURE.<br>ELEGANTLY CRAFTED.</p>
+        </div>
+
+        <!-- Hero Architecture Image Container -->
+        <div class="hero-image-stage">
+          <img src="assets/terascape-hero.jpg" alt="Home with the hearth by Architect Intezar" class="hero-terascape-img" id="heroCurrentImg" />
+          
+          <a href="#portfolio" class="view-project-link">
+            <span>View Project</span>
+            <svg class="external-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Bottom Right Interactive Project Switcher (Screenshot 1) -->
+          <div class="hero-project-slider-card">
+            <div class="slider-project-title" id="heroSliderTitle">Stellar home for Saturion</div>
+            <div class="slider-controls-row">
+              <button class="slider-arrow-btn" id="heroPrevBtn" aria-label="Previous project">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <div class="slider-track-indicator">
+                <span id="sliderCurrentNum">(01)</span>
+                <div class="slider-line-progress">
+                  <div class="progress-fill" id="sliderProgressBar" style="width: 33%;"></div>
+                </div>
+                <span id="sliderTotalNum">(03)</span>
+              </div>
+              <button class="slider-arrow-btn" id="heroNextBtn" aria-label="Next project">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Grid Bar -->
+        <div class="hero-col-footer-right">
+          <span class="studio-footer-tag">ARCHITECT INTEZAR STUDIO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed / Docked Floating Badges in Bottom Right -->
+    <div class="hero-docked-badges">
+      <button class="badge-framer-btn open-consultation-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span>Get template</span>
+      </button>
+      <span class="badge-framer-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/>
+        </svg>
+        <span>Made in Framer</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- Fullscreen Studio Drawer Menu -->
+  <div class="fullscreen-studio-menu" id="studioMenuDrawer">
+    <div class="studio-menu-backdrop" id="closeMenuBackdrop"></div>
+    <div class="studio-menu-panel">
+      <div class="studio-menu-header">
+        <span class="studio-menu-title">ARCHITECT INTEZAR ATELIER</span>
+        <button class="studio-menu-close" id="closeStudioMenuBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="studio-menu-nav">
+        <a href="#hero" class="studio-nav-item">
+          <span class="studio-nav-num">01</span>
+          <span class="studio-nav-text">Overview & Studio</span>
+        </a>
+        <a href="#benefits" class="studio-nav-item">
+          <span class="studio-nav-num">02</span>
+          <span class="studio-nav-text">Architectural Pillars</span>
+        </a>
+        <a href="#timeline" class="studio-nav-item">
+          <span class="studio-nav-num">03</span>
+          <span class="studio-nav-text">Transformation Timeline</span>
+        </a>
+        <a href="#clinical" class="studio-nav-item">
+          <span class="studio-nav-num">04</span>
+          <span class="studio-nav-text">BIM & Engineering Precision</span>
+        </a>
+        <a href="#portfolio" class="studio-nav-item">
+          <span class="studio-nav-num">05</span>
+          <span class="studio-nav-text">Selected Works & Villas</span>
+        </a>
+        <a href="#estimator" class="studio-nav-item">
+          <span class="studio-nav-num">06</span>
+          <span class="studio-nav-text">Interactive Budget Estimator</span>
+        </a>
+        <a href="#contact" class="studio-nav-item">
+          <span class="studio-nav-num">07</span>
+          <span class="studio-nav-text">Contact & Atelier Inquiry</span>
+        </a>
+      </nav>
+      <div class="studio-menu-footer">
+        <button class="start-project-btn w-full open-consultation-btn">
+          <span>Start a project</span>
+          <span class="btn-square-icon">■</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SECONDARY MINIMAL FLOATING NAV (Appears when scrolling) -->
+  <div class="floating-white-nav" id="stickyNav">
+    <div class="floating-nav-container">
+      <a href="#hero" class="nav-brand-bold">
+        <span>ARCHITECT INTEZAR</span>
+      </a>
+      <ul class="nav-mid-links">
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#timeline">Effects Timeline</a></li>
+        <li><a href="#clinical">Precision</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#press">Featured In</a></li>
+        <li><a href="#estimator">Estimator</a></li>
+      </ul>
+      <div class="nav-cta-wrap">
+        <button class="black-pill-btn open-consultation-btn">Start Project</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. "ONE SUPPLEMENT, FIVE WAYS IT WORKS FOR YOU" (Ref: Screenshot 2 & 4) -->
+  <section class="white-section benefits-section" id="benefits">
+    <div class="content-container">
+      <div class="benefits-header-row">
+        <h2 class="section-big-title">
+          One studio, five<br>ways it works for you
+        </h2>
+        <button class="black-pill-btn open-consultation-btn">
+          Start Project
+        </button>
+      </div>
+
+      <!-- 5-Card Rounded Horizontal Cards Gallery (Ref: Screenshot 4) -->
+      <div class="five-cards-row">
+        <!-- Card 1 -->
+        <div class="benefit-card">
+          <div class="benefit-img-wrapper">
+            <img src="assets/pillar-spatial.jpg" alt="Spatial Vitality Architecture" />
+          </div>
+          <div class="benefit-meta">
+            <h4 class="benefit-title">Vitality</h4>
+            <p class="benefit-sub">Double-height volume, natural glow</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="benefit-card">
+          <div class="benefit-img-wrapper">
+            <img src="assets/pillar-interior.jpg" alt="Acoustic Sleep & Serenity" />
+          </div>
+          <div class="benefit-meta">
+            <h4 class="benefit-title">Serenity</h4>
+            <p class="benefit-sub">Deeper sleep, acoustic wood isolation</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="benefit-card">
+          <div class="benefit-img-wrapper">
+            <img src="assets/pillar-biophilic.jpg" alt="Biophilic Natural Energy" />
+          </div>
+          <div class="benefit-meta">
+            <h4 class="benefit-title">Energy</h4>
+            <p class="benefit-sub">Sun-path airflow, indoor botanical light</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="benefit-card">
+          <div class="benefit-img-wrapper">
+            <img src="assets/pillar-engineering.jpg" alt="Structural Immunity" />
+          </div>
+          <div class="benefit-meta">
+            <h4 class="benefit-title">Immunity</h4>
+            <p class="benefit-sub">Zero-tolerance BIM, seismic durability</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="benefit-card">
+          <div class="benefit-img-wrapper">
+            <img src="assets/pillar-turnkey.jpg" alt="Turnkey Digestion & Ease" />
+          </div>
+          <div class="benefit-meta">
+            <h4 class="benefit-title">Effortless</h4>
+            <p class="benefit-sub">Single turnkey contract, zero friction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. "WHAT HAPPENS AFTER YOU START WITH ARCHITECT INTEZAR?" (Ref: Screenshot 3) -->
+  <section class="white-section timeline-section" id="timeline">
+    <div class="content-container">
+      <div class="timeline-two-col">
+        <!-- Left Column: Photo collage with blue round badge (AI) -->
+        <div class="timeline-collage-col">
+          <div class="collage-wrapper">
+            <div class="collage-card-main">
+              <img src="assets/project-sanctuary.jpg" alt="Villa design process" id="timelineActiveImg" />
+              <!-- Blue Round Badge (Ref: Screenshot 3) -->
+              <div class="floating-blue-disc">
+                <svg viewBox="0 0 100 100" class="disc-svg">
+                  <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                  <text font-size="9" fill="white" letter-spacing="2">
+                    <textPath href="#circlePath" startOffset="0%">
+                      • ONE STUDIO • FIVE BENEFITS • JUST ONE BLUEPRINT •
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="disc-inner-icon">AI</div>
+              </div>
+            </div>
+            <div class="collage-card-sub">
+              <img src="assets/after.jpg" alt="Finished interior" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Phased Timeline (Ref: Screenshot 3) -->
+        <div class="timeline-text-col">
+          <h2 class="section-big-title-left">
+            What happens after you<br>start with Architect Intezar?
+          </h2>
+
+          <div class="timeline-phase-list">
+            <!-- Phase 1 -->
+            <div class="phase-item active" data-phase="1">
+              <span class="phase-badge">Week 1</span>
+              <h3 class="phase-heading">Your space adjusts</h3>
+              <p class="phase-description">
+                You won't feel overwhelmed. Just a clear master blueprint, a 3D volumetric massing study, a spatial rhythm that feels calmer, and a morning that feels a little more effortless.
+              </p>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-item" data-phase="2">
+              <span class="phase-badge">Week 4</span>
+              <h3 class="phase-heading">You start noticing in 8K</h3>
+              <p class="phase-description">
+                It's not one thing you can point to. It's everything at once: millimeter-accurate BIM structural models, custom fluted Italian joinery, tactile acoustic stone, zero contractor friction. Something shifted.
+              </p>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-item" data-phase="3">
+              <span class="phase-badge">Week 8</span>
+              <h3 class="phase-heading">The new normal</h3>
+              <p class="phase-description">
+                Everything compounds. Structural longevity is rock-solid, ambient daylight lasts the full day, and keys are handed over to a living sanctuary. 30 seconds to realize: this is just how you live now.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. "MAGAZINES WE'VE BEEN FEATURED IN" (Ref: Screenshot 5) -->
+  <section class="white-section press-section-framer" id="press">
+    <div class="content-container text-center">
+      <h2 class="press-framer-title">
+        Magazines we've<br>been featured in
+      </h2>
+
+      <!-- Logos Row with Center Blue Circular Badge -->
+      <div class="press-logos-display">
+        <div class="logo-text">health</div>
+        <div class="logo-text">NEWBEAUTY</div>
+        <div class="logo-text">theSkimm</div>
+        
+        <!-- Center Blue Emblem (Ref: Screenshot 5) -->
+        <div class="press-center-blue-emblem">
+          <span class="blue-emblem-text">AI</span>
+        </div>
+
+        <div class="logo-text">dezeen</div>
+        <div class="logo-text">NEWBEAUTY</div>
+        <div class="logo-text">theSkimm</div>
+        <div class="logo-text">archdaily</div>
+      </div>
+
+      <!-- Floating Product/Project Card (Ref: Screenshot 5) -->
+      <div class="featured-project-pill-card">
+        <div class="pill-card-thumb">
+          <img src="assets/terascape-hero.jpg" alt="Villa Monteverde" />
+        </div>
+        <div class="pill-card-details">
+          <span class="pill-card-name">Villa Monteverde Living Sanctuary</span>
+          <span class="pill-card-price">Turnkey Architectural Commission</span>
+        </div>
+        <button class="pill-card-arrow-btn open-consultation-btn" title="View Commission">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <p class="press-framer-quote">
+        Praised across top-tier publications for its simplicity and architectural effectiveness. One master studio partnership that's quickly becoming the new standard in the luxury design world.
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. "CLINICALLY DOSED, NOT JUST LABEL DECORATION" (Ref: Screenshot 6 Top) -->
+  <section class="white-section clinical-section" id="clinical">
+    <div class="content-container">
+      <div class="two-col-feature-grid">
+        <!-- Left: Checklist & Copy -->
+        <div class="feature-text-block">
+          <h2 class="feature-big-heading">
+            Clinically engineered, not<br>just blueprint decoration
+          </h2>
+          <p class="feature-sub-paragraph">
+            Most architecture firms use just enough 3D rendering to win the contract. Architect Intezar delivers the exact engineering tolerances and zero-waste BIM schematics proven on high-stakes global sites. No shortcuts, no guesswork at all.
+          </p>
+
+          <ul class="feature-checklist">
+            <li>
+              <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+              <span>LOD 400 millimeter-accurate BIM structural engineering</span>
+            </li>
+            <li>
+              <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+              <span>Direct Italian stone quarry & artisan millwork sourcing</span>
+            </li>
+            <li>
+              <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+              <span>One master atelier replaces 10 fragmented contractors</span>
+            </li>
+            <li>
+              <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+              <span>5-Year comprehensive structural guarantee</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Photo with Floating Glass Comparison Card (Ref: Screenshot 6) -->
+        <div class="feature-visual-block">
+          <div class="visual-with-floating-card">
+            <img src="assets/pillar-interior.jpg" alt="Architectural engineering precision" class="feature-bg-img" />
+            
+            <!-- Floating Frosted Glass Effectiveness Card -->
+            <div class="floating-glass-stats-card">
+              <span class="stats-card-title">Execution Precision Comparison</span>
+              
+              <div class="stats-bars-row">
+                <!-- Bar 1: Architect Intezar -->
+                <div class="stat-bar-col">
+                  <span class="bar-val">99%</span>
+                  <span class="bar-sub">Intezar</span>
+                  <div class="bar-track">
+                    <div class="bar-fill active-fill" style="height: 99%;"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 2: Most Firms -->
+                <div class="stat-bar-col">
+                  <span class="bar-val">25%</span>
+                  <span class="bar-sub">Most</span>
+                  <div class="bar-track">
+                    <div class="bar-fill" style="height: 35%;"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 3: Others -->
+                <div class="stat-bar-col">
+                  <span class="bar-val">15%</span>
+                  <span class="bar-sub">Others</span>
+                  <div class="bar-track">
+                    <div class="bar-fill" style="height: 20%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. "ONE GUMMY REPLACES THE ENTIRE ROUTINE" (Ref: Screenshot 6 Bottom) -->
+  <section class="white-section routine-section">
+    <div class="content-container">
+      <div class="two-col-feature-grid reverse-mobile">
+        <!-- Left: Image with floating 5-star review card -->
+        <div class="feature-visual-block">
+          <div class="visual-with-floating-card">
+            <img src="assets/pillar-turnkey.jpg" alt="Turnkey luxury penthouse" class="feature-bg-img" />
+            
+            <!-- Floating Review Badge -->
+            <div class="floating-review-badge">
+              <div class="review-avatars">
+                <div class="rev-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="Client" /></div>
+                <div class="rev-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Client" /></div>
+                <div class="rev-avatar"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt="Client" /></div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I stopped coordinating 6 different contractors after hiring Architect Intezar."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Text -->
+        <div class="feature-text-block">
+          <h2 class="feature-big-heading">
+            One master atelier replaces<br>the entire chaotic coordination
+          </h2>
+          <p class="feature-sub-paragraph">
+            Clear off your stress. We've consolidated your structural engineering, interior architecture, MEP precision, Italian material procurement, and site construction into just a single, effortless luxury partnership that compounds value.
+          </p>
+          <div>
+            <button class="black-pill-btn open-consultation-btn">
+              <span>Book Strategy Session</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. INTERACTIVE BEFORE & AFTER COMPARISON SLIDER -->
+  <section class="white-section before-after-section" id="before-after">
+    <div class="content-container">
+      <div class="section-header-clean text-center">
+        <h2 class="section-big-title">From Blueprint to Living Masterpiece</h2>
+        <p class="section-sub-clean">Drag the split handle to compare raw structural BIM blueprints against completed turnkey spaces.</p>
+      </div>
+
+      <div class="comparison-slider-wrapper">
+        <div class="comparison-slider" id="comparisonSlider">
+          <!-- After (Top Layer) -->
+          <div class="comparison-layer after-layer">
+            <img src="assets/after.jpg" alt="Finished Luxury Living Room" />
+            <span class="comparison-tag after-tag"><i class="fa-solid fa-circle-check"></i> Turnkey Reality</span>
+          </div>
+
+          <!-- Before (Base Layer) -->
+          <div class="comparison-layer before-layer" id="beforeLayer">
+            <img src="assets/before.jpg" alt="BIM Architectural Blueprint" />
+            <span class="comparison-tag before-tag"><i class="fa-solid fa-drafting-compass"></i> BIM Wireframe</span>
+          </div>
+
+          <!-- Handle -->
+          <div class="slider-handle" id="sliderHandle">
+            <div class="handle-circle">
+              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CURATED SIGNATURE PORTFOLIO -->
+  <section class="white-section portfolio-section" id="portfolio">
+    <div class="content-container">
+      <div class="portfolio-header-flex">
+        <div>
+          <h2 class="section-big-title">Curated Signature Works</h2>
+          <p class="section-sub-clean">Selected private estates, penthouses, and architectural sanctuaries.</p>
+        </div>
+        <div class="portfolio-filters">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="villas">Villas</button>
+          <button class="filter-pill" data-filter="penthouses">Penthouses</button>
+          <button class="filter-pill" data-filter="interiors">Interiors</button>
+        </div>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="portfolio-card" data-category="villas">
+          <div class="portfolio-img-box">
+            <img src="assets/terascape-hero.jpg" alt="Villa Monteverde" loading="lazy" />
+            <button class="view-project-btn" data-project="monteverde">
+              <span>View Project ↗</span>
+            </button>
+          </div>
+          <div class="portfolio-meta-clean">
+            <span class="p-loc">Costa Brava, Spain • 12,400 sq.ft</span>
+            <h3 class="p-title-clean">Villa Monteverde</h3>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-card" data-category="penthouses">
+          <div class="portfolio-img-box">
+            <img src="assets/project-penthouse.jpg" alt="The Obsidian Sky Penthouse" loading="lazy" />
+            <button class="view-project-btn" data-project="obsidian">
+              <span>View Project ↗</span>
+            </button>
+          </div>
+          <div class="portfolio-meta-clean">
+            <span class="p-loc">Manhattan, NY • 8,200 sq.ft</span>
+            <h3 class="p-title-clean">The Obsidian Sky Penthouse</h3>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-card" data-category="villas">
+          <div class="portfolio-img-box">
+            <img src="assets/project-sanctuary.jpg" alt="Al-Khor Desert Sanctuary" loading="lazy" />
+            <button class="view-project-btn" data-project="sanctuary">
+              <span>View Project ↗</span>
+            </button>
+          </div>
+          <div class="portfolio-meta-clean">
+            <span class="p-loc">Dubai / Al-Khor • 16,000 sq.ft</span>
+            <h3 class="p-title-clean">Al-Khor Desert Sanctuary</h3>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="portfolio-card" data-category="interiors">
+          <div class="portfolio-img-box">
+            <img src="assets/pillar-interior.jpg" alt="The Mayfair Heritage Suite" loading="lazy" />
+            <button class="view-project-btn" data-project="mayfair">
+              <span>View Project ↗</span>
+            </button>
+          </div>
+          <div class="portfolio-meta-clean">
+            <span class="p-loc">Mayfair, London • 4,500 sq.ft</span>
+            <h3 class="p-title-clean">The Mayfair Master Suite</h3>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="portfolio-card" data-category="interiors">
+          <div class="portfolio-img-box">
+            <img src="assets/pillar-turnkey.jpg" alt="Monolithic Calacatta Atelier" loading="lazy" />
+            <button class="view-project-btn" data-project="calacatta">
+              <span>View Project ↗</span>
+            </button>
+          </div>
+          <div class="portfolio-meta-clean">
+            <span class="p-loc">Milan, Italy • 3,200 sq.ft</span>
+            <h3 class="p-title-clean">The Monolithic Calacatta Atelier</h3>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="portfolio-card" data-category="interiors">
+          <div class="portfolio-img-box">
+            <img src="assets/pillar-biophilic.jpg" alt="Kyoto Zen Courtyard" loading="lazy" />
+            <button class="view-project-btn" data-project="kyoto">
+              <span>View Project ↗</span>
+            </button>
+          </div>
+          <div class="portfolio-meta-clean">
+            <span class="p-loc">Bandra West, Mumbai • 6,800 sq.ft</span>
+            <h3 class="p-title-clean">The Biophilic Zen Courtyard</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. INTERACTIVE PROJECT ESTIMATOR -->
+  <section class="white-section estimator-section-clean" id="estimator">
+    <div class="content-container">
+      <div class="estimator-clean-card">
+        <div class="text-center mb-30">
+          <h2 class="section-big-title">Calculate Your Space Scope</h2>
+          <p class="section-sub-clean">Select your property specifications to receive real-time timeline & atelier tier recommendations.</p>
+        </div>
+
+        <div class="estimator-controls">
+          <!-- Type -->
+          <div class="control-row">
+            <label class="ctrl-title">Property Type</label>
+            <div class="pill-group">
+              <button class="est-pill active" data-type="villa">Private Villa</button>
+              <button class="est-pill" data-type="penthouse">Sky Penthouse</button>
+              <button class="est-pill" data-type="apartment">Luxury Apartment</button>
+              <button class="est-pill" data-type="commercial">Boutique Commercial</button>
+            </div>
+          </div>
+
+          <!-- Area -->
+          <div class="control-row">
+            <div class="flex-between">
+              <label class="ctrl-title">Built-Up Area</label>
+              <span class="area-badge" id="areaDisplay">5,000 sq. ft</span>
+            </div>
+            <input type="range" id="areaRange" min="1500" max="25000" step="500" value="5000" class="clean-range-slider" />
+          </div>
+
+          <!-- Scope -->
+          <div class="control-row">
+            <label class="ctrl-title">Engagement Scope</label>
+            <div class="pill-group">
+              <button class="scope-est-pill active" data-scope="complete">Full Turnkey Atelier (Architecture + Interiors + Build)</button>
+              <button class="scope-est-pill" data-scope="interior">Interior Master Architecture & Millwork</button>
+              <button class="scope-est-pill" data-scope="architecture">Architectural BIM Blueprint & Structure</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Box -->
+        <div class="estimator-output-box">
+          <div class="est-stat">
+            <span class="est-stat-label">Estimated Design Duration</span>
+            <span class="est-stat-val" id="resDuration">4–6 Weeks (Concept to 8K BIM)</span>
+          </div>
+          <div class="est-stat">
+            <span class="est-stat-label">Dedicated Atelier Team</span>
+            <span class="est-stat-val" id="resTeam">Principal Architect + 3D Visualizer + Material Director</span>
+          </div>
+          <div class="est-stat">
+            <span class="est-stat-label">Recommended Strategy Tier</span>
+            <span class="est-stat-val highlight-blue" id="resTier">Bespoke Signature Turnkey Tier</span>
+          </div>
+          <button class="black-pill-btn w-full open-consultation-btn mt-20">
+            <span>Lock In Strategy Session For This Scope</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. CLEAN BOTTOM CTA (Ref: Screenshot 1 & 6) -->
+  <section class="clean-cta-section">
+    <div class="content-container text-center">
+      <h2 class="cta-massive-heading">Ready to design your landmark?</h2>
+      <p class="cta-sub-text">Schedule a confidential design strategy consultation with Architect Intezar.</p>
+      <div class="cta-actions-wrap">
+        <button class="start-project-btn open-consultation-btn">
+          <span>Start a project</span>
+          <span class="btn-square-icon">■</span>
+        </button>
+      </div>
+      <div class="cta-badges-row">
+        <span><i class="fa-solid fa-shield-halved"></i> Strict NDA Confidentiality</span>
+        <span><i class="fa-solid fa-earth-americas"></i> Global Studio Operations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. MINIMAL CLEAN FOOTER -->
+  <footer class="clean-footer">
+    <div class="content-container">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <div class="footer-brand-title">ARCHITECT INTEZAR</div>
+          <p class="footer-brand-sub">Designing spaces for modern living.</p>
+        </div>
+        <div class="footer-nav-links">
+          <a href="#hero">Overview</a>
+          <a href="#benefits">Pillars</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#portfolio">Projects</a>
+          <a href="#estimator">Estimator</a>
+          <a href="#press">Press</a>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 ARCHITECT INTEZAR STUDIO. ALL RIGHTS RESERVED.</span>
+        <span>PARIS • DUBAI • LONDON • MUMBAI</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 14. PROJECT MODAL -->
+  <div class="modal-overlay" id="projectModalOverlay">
+    <div class="clean-modal-dialog">
+      <button class="clean-modal-close" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- 15. CONSULTATION BOOKING MODAL -->
+  <div class="modal-overlay" id="consultationModalOverlay">
+    <div class="clean-modal-dialog">
+      <button class="clean-modal-close" id="consultCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="consultation-box">
+        <div class="text-center mb-24">
+          <h3 class="consult-modal-title">Start a Project with Architect Intezar</h3>
+          <p class="consult-modal-sub">Tell us about your residential or commercial vision.</p>
+        </div>
+
+        <form id="consultationForm" class="clean-form">
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label>Full Name *</label>
+              <input type="text" required placeholder="Eleanor Vance" class="clean-input" />
+            </div>
+            <div class="form-field">
+              <label>Email Address *</label>
+              <input type="email" required placeholder="eleanor@domain.com" class="clean-input" />
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" required placeholder="+1 (555) 000-0000" class="clean-input" />
+            </div>
+            <div class="form-field">
+              <label>Project Location *</label>
+              <input type="text" required placeholder="Dubai, London, Mumbai" class="clean-input" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Project Scope</label>
+            <select class="clean-input">
+              <option value="villa">Luxury Villa / Estate</option>
+              <option value="penthouse">Sky Penthouse</option>
+              <option value="interiors">Complete Turnkey Interiors</option>
+              <option value="commercial">Boutique Commercial / Studio</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Project Notes & Aspirations</label>
+            <textarea rows="3" placeholder="Estimated square footage, timeline, or site details..." class="clean-input"></textarea>
+          </div>
+
+          <button type="submit" class="start-project-btn w-full" id="submitConsultBtn">
+            <span>Submit Project Inquiry</span>
+            <span class="btn-square-icon">■</span>
+          </button>
+        </form>
+
+        <div id="consultSuccessState" style="display: none;" class="text-center py-20">
+          <div class="success-disc mb-16"><i class="fa-solid fa-check"></i></div>
+          <h4 class="text-2xl font-bold mb-8">Inquiry Received</h4>
+          <p class="text-gray-600 mb-20">Our executive atelier will review your brief and contact you within 24 hours.</p>
+          <button class="black-pill-btn" id="closeSuccessBtn">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
