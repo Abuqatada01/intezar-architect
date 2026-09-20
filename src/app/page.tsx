@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import WhatWeDoSection from "@/components/WhatWeDoSection";
+import PeopleBehindArtSection from "@/components/PeopleBehindArtSection";
 import StudioDrawer from "@/components/StudioDrawer";
 import FloatingNav from "@/components/FloatingNav";
 import PillarsSection from "@/components/PillarsSection";
@@ -38,6 +39,9 @@ export default function Home() {
 
       {/* 3. What We Do / Services Showcase (White Theme) */}
       <WhatWeDoSection onOpenConsultation={() => setIsConsultOpen(true)} />
+
+      {/* 3.5 The People Behind The Art & Atelier */}
+      <PeopleBehindArtSection />
 
       {/* 4. Floating Navbar on Scroll */}
       <FloatingNav onOpenConsultation={() => setIsConsultOpen(true)} />
