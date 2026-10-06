@@ -21,6 +21,8 @@ import Footer from "@/components/Footer";
 import ConsultationModal from "@/components/ConsultationModal";
 import ProjectModal from "@/components/ProjectModal";
 
+import ScrollReveal from "@/components/ScrollReveal";
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isConsultOpen, setIsConsultOpen] = useState(false);
@@ -35,37 +37,58 @@ export default function Home() {
       />
 
       {/* 2. Our Philosophy & Design Lab Section */}
-      <PhilosophySection />
+      <ScrollReveal>
+        <PhilosophySection />
+      </ScrollReveal>
 
       {/* 3. What We Do / Services Showcase (White Theme) */}
-      <WhatWeDoSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      <ScrollReveal>
+        <WhatWeDoSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      </ScrollReveal>
 
       {/* 3.5 The People Behind The Art & Atelier */}
-      <PeopleBehindArtSection />
+      <ScrollReveal>
+        <PeopleBehindArtSection />
+      </ScrollReveal>
 
-      {/* 4. Floating Navbar on Scroll */}
-      <FloatingNav onOpenConsultation={() => setIsConsultOpen(true)} />
+      {/* 4. Floating Navbar on Scroll (Sticky / Independent) */}
+      <FloatingNav
+        onOpenMenu={() => setIsMenuOpen(true)}
+        onOpenConsultation={() => setIsConsultOpen(true)}
+      />
 
       {/* 5. Architectural Pillars */}
-      <PillarsSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      <ScrollReveal>
+        <PillarsSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      </ScrollReveal>
 
       {/* 6. Experience & Track Record Stats */}
-      <ExperienceStatsSection />
+      <ScrollReveal>
+        <ExperienceStatsSection />
+      </ScrollReveal>
 
       {/* 7. Renovation & Remodeling Showcase */}
-      <RenovationSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      <ScrollReveal>
+        <RenovationSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      </ScrollReveal>
 
       {/* 8. Projects We've Delivered Bento Gallery */}
-      <DeliveredProjectsSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      <ScrollReveal>
+        <DeliveredProjectsSection onOpenConsultation={() => setIsConsultOpen(true)} />
+      </ScrollReveal>
 
       {/* 9. Interactive Transformation Before & After */}
-      <TransformationSection />
+      <ScrollReveal>
+        <TransformationSection />
+      </ScrollReveal>
 
       {/* 5. BIM 5D Precision & Engineering */}
       {/* <BimSection /> */}
 
       {/* 6. Selected Works & Filterable Portfolios */}
-      <PortfolioSection onSelectProject={(project) => setSelectedProject(project)} />
+      <ScrollReveal>
+        <PortfolioSection onSelectProject={(project) => setSelectedProject(project)} />
+      </ScrollReveal>
 
       {/* 7. Real-Time Budget Estimator */}
       {/* <EstimatorSection onOpenConsultation={() => setIsConsultOpen(true)} /> */}
@@ -74,10 +97,14 @@ export default function Home() {
       {/* <PressSection /> */}
 
       {/* 9. Frequently Asked Questions */}
-      <FaqSection />
+      <ScrollReveal>
+        <FaqSection />
+      </ScrollReveal>
 
       {/* 10. Atelier Footer */}
-      <Footer onOpenConsultation={() => setIsConsultOpen(true)} />
+      <ScrollReveal>
+        <Footer onOpenConsultation={() => setIsConsultOpen(true)} />
+      </ScrollReveal>
 
       {/* Full-Screen Studio Drawer */}
       <StudioDrawer

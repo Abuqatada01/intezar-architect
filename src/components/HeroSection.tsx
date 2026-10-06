@@ -1,235 +1,163 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowUpRight, Box } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 
 interface HeroSectionProps {
-  onOpenMenu: () => void;
-  onOpenConsultation: () => void;
+  onOpenMenu?: () => void;
+  onOpenConsultation?: () => void;
 }
-
-const heroSlides = [
-  {
-    num: "(01)",
-    title: "Stellar home for Saturion",
-    mainHeading: "Home with<br />the hearth",
-    img: "/assets/terascape-hero.jpg",
-    progress: "33%",
-  },
-  {
-    num: "(02)",
-    title: "The Obsidian Sky Penthouse",
-    mainHeading: "Crown over<br />the skyline",
-    img: "/assets/terascape-hero-2.jpg",
-    progress: "66%",
-  },
-  {
-    num: "(03)",
-    title: "Al-Khor Desert Sanctuary",
-    mainHeading: "Sanctuary for<br />the senses",
-    img: "/assets/terascape-hero-3.jpg",
-    progress: "100%",
-  },
-];
 
 export default function HeroSection({
   onOpenMenu,
   onOpenConsultation,
 }: HeroSectionProps) {
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  const slide = heroSlides[currentIdx];
-
-  const handlePrev = () => {
-    setCurrentIdx((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
-  const handleNext = () => {
-    setCurrentIdx((prev) => (prev + 1) % heroSlides.length);
+  const handleScrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const target = document.getElementById("portfolio");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <section
       id="hero"
-      className="relative w-full h-screen min-h-[640px] bg-[#43729b] text-white flex flex-col overflow-hidden select-none"
+      className="relative w-full min-h-screen bg-[#2c435c] p-2.5 sm:p-4 md:p-6 lg:p-7 flex flex-col justify-center select-none"
     >
-      {/* 1. Top Architectural Grid Header */}
-      <header className="grid grid-cols-[210px_220px_1fr_auto] h-[68px] min-h-[68px] border-b border-white/20 relative z-20 items-stretch">
-        {/* Col 1: Brand */}
-        <div className="flex items-center px-8 border-r border-white/20">
+      {/* Outer Framed Canvas with Rounded Border */}
+      <div className="relative w-full h-[calc(100vh-20px)] sm:h-[calc(100vh-32px)] md:h-[calc(100vh-48px)] min-h-[640px] max-h-[1050px] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden border border-white/20 shadow-2xl flex flex-col justify-between bg-gradient-to-b from-[#3a5879] via-[#486b91] to-[#2b415a]">
+        
+        {/* Subtle Architectural Drafting Grid Columns (Vertical Lines) */}
+        <div className="absolute inset-0 grid grid-cols-4 sm:grid-cols-6 pointer-events-none z-10 divide-x divide-white/[0.07]">
+          <div />
+          <div />
+          <div />
+          <div />
+          <div className="hidden sm:block" />
+          <div className="hidden sm:block" />
+        </div>
+
+        {/* 1. Top Architectural Header */}
+        <header className="relative z-30 w-full px-6 sm:px-10 md:px-14 pt-6 sm:pt-8 md:pt-10 flex items-center justify-between">
+          {/* Brand Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2.5 font-semibold text-base tracking-tight text-white hover:opacity-90 transition-opacity"
+            className="text-white text-xs sm:text-sm md:text-[15px] font-bold tracking-[0.18em] uppercase hover:opacity-85 transition-opacity"
           >
-            <svg
-              className="w-4 h-4 text-white shrink-0"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            <span className="font-heading whitespace-nowrap">Architect Intezar</span>
+            ARCHLINE®
           </a>
-        </div>
 
-        {/* Col 2: Tagline */}
-        <div className="hidden sm:flex items-center px-6 border-r border-white/20 text-xs leading-snug text-white/90 font-light">
-          <span>
-            Spaces for
-            <br />
-            modern living.
-          </span>
-        </div>
+          {/* Center Links (Muted & Elegantly Lowercased with commas) */}
+          <nav className="hidden md:flex items-center gap-2 text-white/80 text-xs sm:text-[13px] font-normal tracking-wide">
+            <a
+              href="#philosophy"
+              className="hover:text-white transition-colors duration-200"
+            >
+              studio
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#portfolio"
+              className="hover:text-white transition-colors duration-200"
+            >
+              projects
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#what-we-do"
+              className="hover:text-white transition-colors duration-200"
+            >
+              expertise
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#press"
+              className="hover:text-white transition-colors duration-200"
+            >
+              insights
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#faq"
+              className="hover:text-white transition-colors duration-200"
+            >
+              contact
+            </a>
+          </nav>
 
-        {/* Col 3: Spacer */}
-        <div className="flex-1" />
-
-        {/* Col 4: Explore / Menu trigger */}
-        <div className="flex items-center px-8 md:px-10">
+          {/* Right Menu Trigger */}
           <button
             onClick={onOpenMenu}
             aria-label="Open navigation menu"
-            className="flex flex-col items-start text-left text-white group cursor-pointer"
+            className="flex items-center gap-2 text-white text-xs sm:text-sm font-semibold tracking-wider group cursor-pointer hover:opacity-85 transition-opacity"
           >
-            <span className="text-[11px] text-white/75 font-normal tracking-wide group-hover:text-white transition-colors">
-              Explore studio
+            <span className="text-sm font-mono leading-none group-hover:-translate-x-0.5 transition-transform">
+              =
             </span>
-            <span className="text-sm font-semibold text-white/95 -mt-0.5 group-hover:translate-x-0.5 transition-transform">
-              + Menu
+            <span className="uppercase text-[11px] sm:text-xs tracking-[0.14em]">
+              MENU
             </span>
           </button>
-        </div>
-      </header>
+        </header>
 
-      {/* 2. Main Hero Architectural Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-[430px_1fr] flex-1 h-[calc(100vh-68px)] relative">
-        {/* Left Column: Typography & Action */}
-        <div className="flex flex-col justify-between pt-16 lg:pt-24 px-8 lg:px-12 pb-0 border-r border-white/20 relative z-10">
-          {/* Main Copy */}
-          <div>
-            <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-white/90 block mb-6">
-              DESIGNING SPACES FOR MODERN LIVING.
-            </span>
-            <h1
-              className="font-heading font-semibold text-white text-5xl sm:text-6xl xl:text-7xl leading-[1.04] tracking-[-0.03em] mb-8"
-              dangerouslySetInnerHTML={{ __html: slide.mainHeading }}
-            />
-            <div className="mb-10">
-              <button
-                onClick={onOpenConsultation}
-                className="inline-flex items-center gap-3.5 bg-white text-black font-semibold text-sm py-3 px-6 rounded-[4px] shadow-[0_4px_14px_rgba(0,0,0,0.08)] hover:bg-slate-100 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+        {/* 2. Middle Content Area: Editorial Headline & Dialogue Copy */}
+        <div className="relative z-20 w-full px-6 sm:px-10 md:px-14 pt-6 sm:pt-10 md:pt-14 pb-2">
+          {/* Main Statement */}
+          <h1 className="text-white font-heading font-normal sm:font-medium text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[1.08] sm:leading-[1.05] tracking-[-0.03em] max-w-5xl">
+            Harmony shaped by light,
+            <br />
+            material, and space.
+          </h1>
+
+          {/* Two-Column Bottom Row in Mid-Section: Subtext on Left & Pill CTA on Right */}
+          <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-12">
+            {/* Left Dialogue Paragraph */}
+            <p className="text-white/85 text-xs sm:text-sm md:text-[14.5px] font-light leading-relaxed max-w-lg">
+              We craft spaces where light, texture, and proportion form a quiet
+              dialogue between architecture and emotion — timeless, balanced,
+              and deeply human.
+            </p>
+
+            {/* Right Action Button */}
+            <div className="shrink-0 pb-1">
+              <a
+                href="#portfolio"
+                onClick={handleScrollToProjects}
+                className="inline-flex items-center gap-3 bg-white text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-lg hover:bg-slate-100 hover:scale-[1.03] active:scale-95 transition-all duration-200 group cursor-pointer"
               >
-                <span>Start a project</span>
-                <span className="w-2.5 h-2.5 bg-black inline-block rounded-[1px]" />
-              </button>
+                <span>EXPLORE OUR PROJECTS</span>
+                <ArrowRight className="w-4 h-4 text-slate-900 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
-
-          {/* Bottom Left Footer Tag */}
-          <div className="border-t border-white/20 -mx-8 lg:-mx-12 px-8 lg:px-12 py-4">
-            <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/70">
-              (SCROLL DOWN)
-            </span>
-          </div>
         </div>
 
-        {/* Right Column: Visual Stage & Glassmorphism Slider */}
-        <div className="relative flex flex-col justify-between overflow-hidden">
-          {/* Top Right Mission Statement */}
-          <div className="absolute top-6 sm:top-7 right-8 sm:right-12 z-10 text-right text-[11px] font-bold tracking-[0.09em] leading-relaxed text-white/95 uppercase">
-            <p>
-              UNCOMPROMISING DETAIL.
-              <br />
-              TAILORED ARCHITECTURE.
-              <br />
-              ELEGANTLY CRAFTED.
-            </p>
-          </div>
-
-          {/* Background Architectural Image */}
-          <div className="relative flex-1 w-full h-full overflow-hidden">
+        {/* 3. Bottom Landscape Visual & Scroll Tag */}
+        <div className="relative z-20 w-full mt-auto">
+          {/* Architectural Villa Visual sitting at the bottom */}
+          <div className="relative w-full h-44 sm:h-56 md:h-72 lg:h-80 overflow-hidden">
             <Image
-              src={slide.img}
-              alt={slide.title}
+              src="/assets/archline-hero.jpg"
+              alt="Architectural minimalist villa by Archline"
               fill
               priority
-              className="object-cover object-right transition-opacity duration-500"
+              sizes="100vw"
+              className="object-cover object-bottom"
             />
-
-            {/* View Project Link Overlay */}
-            <a
-              href="#portfolio"
-              className="absolute bottom-24 sm:bottom-24 right-8 sm:right-12 z-10 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:opacity-85 transition-opacity"
-            >
-              <span>View Project</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-
-            {/* Frosted Glass Slider Card */}
-            <div className="absolute bottom-5 sm:bottom-6 right-8 sm:right-12 z-10 bg-[#e1ebf5]/80 backdrop-blur-xl border border-white/50 rounded-[4px] p-3.5 sm:p-4 min-w-[240px] shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
-              <div className="text-xs font-semibold text-slate-900 mb-2.5 tracking-tight">
-                {slide.title}
-              </div>
-              <div className="flex items-center justify-between gap-3">
-                <button
-                  onClick={handlePrev}
-                  aria-label="Previous project slide"
-                  className="w-6 h-6 rounded bg-white/60 hover:bg-white border border-black/5 flex items-center justify-center text-black transition-colors"
-                >
-                  <ChevronLeft className="w-3.5 h-3.5" />
-                </button>
-
-                <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-600 font-mono">
-                  <span>{slide.num}</span>
-                  <div className="w-12 sm:w-14 h-[2px] bg-black/20 rounded relative overflow-hidden">
-                    <div
-                      className="h-full bg-black transition-all duration-300"
-                      style={{ width: slide.progress }}
-                    />
-                  </div>
-                  <span>(03)</span>
-                </div>
-
-                <button
-                  onClick={handleNext}
-                  aria-label="Next project slide"
-                  className="w-6 h-6 rounded bg-white/60 hover:bg-white border border-black/5 flex items-center justify-center text-black transition-colors"
-                >
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
+            {/* Smooth Top Gradient Blend with the Sky */}
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#3a5879]/90 pointer-events-none" />
+            
+            {/* Scroll Down Tag over bottom left */}
+            <div className="absolute top-4 sm:top-6 left-6 sm:left-10 md:left-14 z-30">
+              <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.2em] text-white/70 uppercase">
+                (SCROLL DOWN)
+              </span>
             </div>
           </div>
-
-          {/* Bottom Right Studio Tag Bar */}
-          <div className="border-t border-white/20 px-8 sm:px-12 py-4 flex items-center justify-between z-10 bg-[#43729b]/40 backdrop-blur-md">
-            <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-white/85">
-              ARCHITECT INTEZAR STUDIO
-            </span>
-          </div>
         </div>
-      </div>
 
-      {/* 3. Docked Floating Badges on Bottom Right */}
-      <div className="absolute bottom-3.5 right-4 z-30 flex flex-col gap-1.5 items-end">
-        <button
-          onClick={onOpenConsultation}
-          className="inline-flex items-center gap-2 bg-white text-black px-3 py-1.5 rounded-[4px] text-xs font-semibold shadow-[0_4px_14px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(0,0,0,0.18)] transition-all"
-        >
-          <Box className="w-3.5 h-3.5 text-slate-700" />
-          <span>Get template</span>
-        </button>
-        <div className="inline-flex items-center gap-2 bg-white text-black px-3 py-1.5 rounded-[4px] text-xs font-semibold shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
-          <svg
-            className="w-3 h-3 text-black"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z" />
-          </svg>
-          <span>Made in Framer</span>
-        </div>
       </div>
     </section>
   );

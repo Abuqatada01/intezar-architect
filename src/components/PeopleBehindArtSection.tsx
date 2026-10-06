@@ -16,13 +16,13 @@ interface Person {
 const people: Person[] = [
   {
     id: 1,
-    name: "LEONARD MARCETTI",
-    role: "EMERGING ARTIST & ATELIER ARCHITECT, ITALY",
+    name: "INTEZAR AHMED",
+    role: "PRINCIPAL ARCHITECT & FOUNDER",
     quote:
-      "My practice centers on the physical architecture of memory and spatial light. The materials are layered, carved, and stripped back—much like the way we recall our past.",
-    portrait: "/assets/art-architect-1.jpg",
+      "My practice centers on the physical architecture of memory and spatial light. The materials are layered, carved, and stripped back—bringing poetic clarity to human habitation.",
+    portrait: "/intezar/intezar-ahmed.png",
     artwork: "/assets/art-artwork-1.jpg",
-    thumb: "/assets/art-architect-1.jpg",
+    thumb: "/intezar/intezar-ahmed.png",
   },
   {
     id: 2,
