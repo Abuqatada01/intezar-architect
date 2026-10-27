@@ -243,7 +243,7 @@ export default function HeroSection({
               );
             })}
             {/* Subtle overlay & editorial label */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-black/10 pointer-events-none z-10" />
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-black/10 pointer-events-none z-10" /> */}
             <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between text-white pointer-events-none z-20">
               <span className="text-[11px] font-medium tracking-wider uppercase bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-sm">
                 Atelier Project • 2026
@@ -266,7 +266,7 @@ export default function HeroSection({
                 key={index}
                 onClick={() => handleGoToSlide(index)}
                 aria-label={`Slide ${index + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                   index === currentSlide ? "w-5 bg-white" : "w-1.5 bg-white/40"
                 }`}
               />
