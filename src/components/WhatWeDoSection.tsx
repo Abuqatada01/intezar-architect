@@ -67,7 +67,7 @@ export default function WhatWeDoSection({
           <div className="lg:col-span-4 flex justify-center">
             <div className="relative w-full max-w-[340px] sm:max-w-[380px] h-[460px] sm:h-[520px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-200 group bg-slate-100">
               <Image
-                src="/assets/what-we-build.jpg"
+                src="/Gemini_Generated_Image_ (1).png"
                 alt="Architect Intezar Atelier Interior & Exterior"
                 fill
                 priority

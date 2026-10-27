@@ -4,12 +4,12 @@ import React from "react";
 import Image from "next/image";
 
 const philosophyImages = [
-  { id: 1, src: "/assets/philo-1.jpg", alt: "Modern architectural facade with louvers" },
-  { id: 2, src: "/assets/philo-2.jpg", alt: "Mediterranean seaside balcony and terrace" },
-  { id: 3, src: "/assets/philo-3.jpg", alt: "White stone cantilever modern villa" },
-  { id: 4, src: "/assets/philo-4.jpg", alt: "Architectural facade with floating staircase" },
-  { id: 5, src: "/assets/philo-5.jpg", alt: "Curvilinear water pavilion with warm glow" },
-  { id: 6, src: "/assets/philo-6.jpg", alt: "Minimalist cubic pavilion on calm water" },
+  { id: 1, src: "/project/project (1).png", alt: "Modern architectural facade with louvers" },
+  { id: 2, src: "/project/project (2).png", alt: "Mediterranean seaside balcony and terrace" },
+  { id: 3, src: "/project/project (3).png", alt: "White stone cantilever modern villa" },
+  { id: 4, src: "/project/project (4).png", alt: "Architectural facade with floating staircase" },
+  { id: 5, src: "/project/project (5).png", alt: "Curvilinear water pavilion with warm glow" },
+  { id: 6, src: "/project/project (6).png", alt: "Minimalist cubic pavilion on calm water" },
 ];
 
 export default function PhilosophySection() {
@@ -46,7 +46,7 @@ export default function PhilosophySection() {
           {philosophyImages.map((img) => (
             <div
               key={`set1-${img.id}`}
-              className="group relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[310px] lg:w-[340px] aspect-square rounded-lg overflow-hidden bg-slate-100 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-all duration-500 cursor-pointer"
+              className="group relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[310px] lg:w-[340px] aspect-[3/4] rounded-lg overflow-hidden bg-slate-100 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-all duration-500 cursor-pointer"
             >
               <Image
                 src={img.src}
@@ -63,7 +63,7 @@ export default function PhilosophySection() {
             <div
               key={`set2-${img.id}`}
               aria-hidden="true"
-              className="group relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[310px] lg:w-[340px] aspect-square rounded-lg overflow-hidden bg-slate-100 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-all duration-500 cursor-pointer"
+              className="group relative flex-shrink-0 w-[240px] sm:w-[280px] md:w-[310px] lg:w-[340px] aspect-[3/4] rounded-lg overflow-hidden bg-slate-100 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-all duration-500 cursor-pointer"
             >
               <Image
                 src={img.src}
