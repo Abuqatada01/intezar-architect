@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 /**
  * Default slideshow images. 
@@ -54,7 +54,9 @@ export default function HeroSection({
 
   const handleScrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
-    const target = document.getElementById("portfolio");
+    const target =
+      document.getElementById("featured-projects") ||
+      document.getElementById("portfolio");
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
@@ -63,7 +65,7 @@ export default function HeroSection({
   const handleScrollDown = (e: React.MouseEvent) => {
     e.preventDefault();
     const target =
-      document.getElementById("philosophy") ||
+      document.getElementById("featured-projects") ||
       document.getElementById("portfolio");
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
@@ -81,7 +83,7 @@ export default function HeroSection({
         - Large devices (md+): Edge-to-edge full screen container with background slideshow
       */}
       <div className="relative w-full h-[calc(100vh-0px)] sm:h-[calc(100vh-32px)] md:h-[100vh] min-h-[640px] md:min-h-[100vh] md:max-h-none rounded-[24px] sm:rounded-[32px] md:rounded-none overflow-hidden border border-white/20 md:border-none shadow-2xl md:shadow-none flex flex-col justify-between bg-gradient-to-b from-[#3a5879] via-[#486b91] to-[#2b415a] md:bg-none">
-        
+
         {/* Full-Screen Architectural Background Slideshow (Large Devices Only) */}
         <div className="hidden md:block absolute inset-0 z-0 overflow-hidden">
           {slides.map((slideSrc, index) => {
@@ -90,9 +92,8 @@ export default function HeroSection({
               <div
                 key={slideSrc}
                 style={{ zIndex: isActive ? 5 : 1 }}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  isActive ? "opacity-100" : "opacity-0 pointer-events-none"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
               >
                 <Image
                   src={slideSrc}
@@ -108,8 +109,8 @@ export default function HeroSection({
           })}
 
           {/* Scrim Overlays for Superior Contrast & Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none z-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-transparent to-slate-950/55 pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/10 via-slate-950/5 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/15 via-transparent to-slate-950/20 pointer-events-none z-10" />
         </div>
 
         {/* Subtle Architectural Drafting Grid Columns (Vertical Lines) */}
@@ -135,35 +136,56 @@ export default function HeroSection({
           {/* Center Links (Desktop only - Muted & Elegantly Lowercased with commas) */}
           <nav className="hidden md:flex items-center gap-2 text-white/90 text-xs sm:text-[13px] font-normal tracking-wide drop-shadow-sm">
             <a
-              href="#philosophy"
-              className="hover:text-white transition-colors duration-200"
-            >
-              studio
-            </a>
-            <span className="text-white/40">,</span>
-            <a
-              href="#portfolio"
+              href="#featured-projects"
               className="hover:text-white transition-colors duration-200"
             >
               projects
             </a>
             <span className="text-white/40">,</span>
             <a
-              href="#what-we-do"
+              href="#case-study"
               className="hover:text-white transition-colors duration-200"
             >
-              expertise
+              case study
             </a>
             <span className="text-white/40">,</span>
             <a
-              href="#press"
+              href="#services"
               className="hover:text-white transition-colors duration-200"
             >
-              insights
+              services
             </a>
             <span className="text-white/40">,</span>
             <a
-              href="#faq"
+              href="#why-choose-us"
+              className="hover:text-white transition-colors duration-200"
+            >
+              why us
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#testimonials"
+              className="hover:text-white transition-colors duration-200"
+            >
+              proof
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#process"
+              className="hover:text-white transition-colors duration-200"
+            >
+              process & cost
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#meet-architect"
+              className="hover:text-white transition-colors duration-200"
+            >
+              the architect
+            </a>
+            <span className="text-white/40">,</span>
+            <a
+              href="#contact-enquiry"
               className="hover:text-white transition-colors duration-200"
             >
               contact
@@ -187,9 +209,17 @@ export default function HeroSection({
 
         {/* 2. Middle Content Area: Editorial Headline & Dialogue Copy */}
         <div className="relative z-20 w-full px-6 sm:px-10 md:px-14 lg:px-20 pt-6 sm:pt-10 md:pt-14 pb-2">
+          {/* Location & Value Prop Badge */}
+          <div className="flex items-center gap-2 mb-3 sm:mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-3 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-mono font-medium text-white shadow-sm">
+              <MapPin className="w-3 h-3 text-sky-300 shrink-0" />
+              <span>Mumbai • India • Nationwide & International Commissions</span>
+            </span>
+          </div>
+
           {/* Main Statement */}
           <h1 className="text-white font-heading capitalize font-normal sm:font-medium text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[1.08] sm:leading-[1.05] tracking-[-0.03em] max-w-5xl drop-shadow-md">
-            We don't just design , 
+            We don't just design ,
             <br />
             we create landmarks
           </h1>
@@ -197,16 +227,14 @@ export default function HeroSection({
           {/* Two-Column Bottom Row in Mid-Section: Subtext on Left & Pill CTA on Right */}
           <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-12">
             {/* Left Dialogue Paragraph */}
-            <p className="text-white/85 md:text-white/95 text-xs sm:text-sm md:text-[14.5px] font-light leading-relaxed max-w-lg drop-shadow-sm">
-              We craft spaces where light, texture, and proportion form a quiet
-              dialogue between architecture and emotion — timeless, balanced,
-              and deeply human.
+            <p className="text-white/85 md:text-black/65 text-xs sm:text-sm md:text-[14px] xl:text-lg font-semibold leading-relaxed max-w-lg drop-shadow-sm">
+              Bespoke architecture and luxury interior design atelier led by Architect Intezar Ahmed. We craft spaces where light, texture, and proportion form a quiet dialogue between architecture and emotion — timeless, balanced, and deeply human.
             </p>
 
             {/* Right Action Button */}
             <div className="shrink-0 pb-1">
               <a
-                href="#portfolio"
+                href="#featured-projects"
                 onClick={handleScrollToProjects}
                 className="inline-flex items-center gap-3 bg-white text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:bg-slate-100 hover:scale-[1.03] active:scale-95 transition-all duration-200 group cursor-pointer"
               >
@@ -226,9 +254,8 @@ export default function HeroSection({
                 <div
                   key={slideSrc}
                   style={{ zIndex: isActive ? 5 : 1 }}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    isActive ? "opacity-100" : "opacity-0 pointer-events-none"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+                    }`}
                 >
                   <Image
                     src={slideSrc}
@@ -266,9 +293,8 @@ export default function HeroSection({
                 key={index}
                 onClick={() => handleGoToSlide(index)}
                 aria-label={`Slide ${index + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  index === currentSlide ? "w-5 bg-white" : "w-1.5 bg-white/40"
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${index === currentSlide ? "w-5 bg-white" : "w-1.5 bg-white/40"
+                  }`}
               />
             ))}
           </div>
@@ -309,11 +335,10 @@ export default function HeroSection({
                       key={index}
                       onClick={() => handleGoToSlide(index)}
                       aria-label={`Go to slide ${index + 1}`}
-                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer relative overflow-hidden ${
-                        isActive
-                          ? "w-8 bg-white/25"
-                          : "w-2 bg-white/40 hover:bg-white/70"
-                      }`}
+                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer relative overflow-hidden ${isActive
+                        ? "w-8 bg-white/25"
+                        : "w-2 bg-white/40 hover:bg-white/70"
+                        }`}
                     >
                       {isActive && (
                         <span

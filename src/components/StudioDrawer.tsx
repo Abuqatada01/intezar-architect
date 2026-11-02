@@ -10,14 +10,17 @@ interface StudioDrawerProps {
 }
 
 const navItems = [
-  { num: "01", title: "Overview & Studio", href: "#hero" },
-  { num: "02", title: "Architectural Pillars", href: "#pillars" },
-  { num: "03", title: "Transformation Timeline", href: "#timeline" },
-  { num: "04", title: "BIM & Engineering Precision", href: "#bim" },
-  { num: "05", title: "Selected Works & Villas", href: "#portfolio" },
-  { num: "06", title: "Interactive Budget Estimator", href: "#estimator" },
-  { num: "07", title: "Featured Press & Accolades", href: "#press" },
-  { num: "08", title: "Contact Atelier & Inquiry", href: "#contact" },
+  { num: "01", title: "Hero & Value Proposition", href: "#hero" },
+  { num: "02", title: "Featured Projects (Visual Interest)", href: "#featured-projects" },
+  { num: "03", title: "Case Study / Before & After", href: "#case-study" },
+  { num: "04", title: "Services & Scope", href: "#services" },
+  { num: "05", title: "Why Choose Us (Differentiation)", href: "#why-choose-us" },
+  { num: "06", title: "Testimonials & Reviews (Social Proof)", href: "#testimonials" },
+  { num: "07", title: "Our Process (Clarity & Risk Reduction)", href: "#process" },
+  { num: "08", title: "Budget & Timeline (Practical Concerns)", href: "#budget-timeline" },
+  { num: "09", title: "About the Studio (Personal Trust)", href: "#about-studio" },
+  { num: "10", title: "FAQs (Resolve Objections)", href: "#faq" },
+  { num: "11", title: "Discuss Your Project (Conversion)", href: "#contact-enquiry" },
 ];
 
 export default function StudioDrawer({

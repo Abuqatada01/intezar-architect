@@ -3,24 +3,21 @@
 import React, { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import PhilosophySection from "@/components/PhilosophySection";
-import WhatWeDoSection from "@/components/WhatWeDoSection";
-import PeopleBehindArtSection from "@/components/PeopleBehindArtSection";
-import StudioDrawer from "@/components/StudioDrawer";
-import FloatingNav from "@/components/FloatingNav";
-import PillarsSection from "@/components/PillarsSection";
-import ExperienceStatsSection from "@/components/ExperienceStatsSection";
-import RenovationSection from "@/components/RenovationSection";
-import DeliveredProjectsSection from "@/components/DeliveredProjectsSection";
-import TransformationSection from "@/components/TransformationSection";
-import BimSection from "@/components/BimSection";
-import PortfolioSection from "@/components/PortfolioSection";
-import EstimatorSection from "@/components/EstimatorSection";
-import PressSection from "@/components/PressSection";
+import CaseStudySection from "@/components/CaseStudySection";
+import ServicesExpertiseSection from "@/components/ServicesExpertiseSection";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import TestimonialsProofSection from "@/components/TestimonialsProofSection";
+import ProcessSection from "@/components/ProcessSection";
+import BudgetTimelineSection from "@/components/BudgetTimelineSection";
+import AboutStudioSection from "@/components/AboutStudioSection";
 import FaqSection from "@/components/FaqSection";
+import FinalCtaEnquirySection from "@/components/FinalCtaEnquirySection";
+
+import FloatingNav from "@/components/FloatingNav";
+import StudioDrawer from "@/components/StudioDrawer";
 import Footer from "@/components/Footer";
 import ConsultationModal from "@/components/ConsultationModal";
 import ProjectModal from "@/components/ProjectModal";
-
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
@@ -29,84 +26,93 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-sky-500 selection:text-white">
-      {/* 1. Exact 1:1 Architectural Hero Section */}
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+      {/* 
+        ========================================================================
+        FINAL RECOMMENDED HOMEPAGE SEQUENCE (11 SECTIONS)
+        ========================================================================
+      */}
+
+      {/* 1. Hero — relevance and value proposition */}
       <HeroSection
         onOpenMenu={() => setIsMenuOpen(true)}
         onOpenConsultation={() => setIsConsultOpen(true)}
       />
 
-      {/* 2. Our Philosophy & Design Lab Section */}
-      <ScrollReveal>
-        <PhilosophySection />
-      </ScrollReveal>
-
-      {/* 3. What We Do / Services Showcase (White Theme) */}
-      <ScrollReveal>
-        <WhatWeDoSection onOpenConsultation={() => setIsConsultOpen(true)} />
-      </ScrollReveal>
-
-      {/* 3.5 The People Behind The Art & Atelier */}
-      <ScrollReveal>
-        <PeopleBehindArtSection />
-      </ScrollReveal>
-
-      {/* 4. Floating Navbar on Scroll (Sticky / Independent) */}
+      {/* Floating Navbar on Scroll (Sticky Header) */}
       <FloatingNav
         onOpenMenu={() => setIsMenuOpen(true)}
         onOpenConsultation={() => setIsConsultOpen(true)}
       />
 
-      {/* 5. Architectural Pillars */}
+      {/* 2. Featured Projects — visual interest (Philosophy Showcase) */}
       <ScrollReveal>
-        <PillarsSection onOpenConsultation={() => setIsConsultOpen(true)} />
+        <PhilosophySection
+          onSelectProject={(project) => setSelectedProject(project)}
+        />
       </ScrollReveal>
 
-      {/* 6. Experience & Track Record Stats */}
+      {/* 3. Project Transformation / Case Study — proof of capability */}
       <ScrollReveal>
-        <ExperienceStatsSection />
+        <CaseStudySection />
       </ScrollReveal>
 
-      {/* 7. Renovation & Remodeling Showcase */}
+      {/* 4. Services — relevance to visitor's needs */}
       <ScrollReveal>
-        <RenovationSection onOpenConsultation={() => setIsConsultOpen(true)} />
+        <ServicesExpertiseSection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
       </ScrollReveal>
 
-      {/* 8. Projects We've Delivered Bento Gallery */}
+      {/* 5. Why Choose Us — differentiation */}
       <ScrollReveal>
-        <DeliveredProjectsSection onOpenConsultation={() => setIsConsultOpen(true)} />
+        <WhyChooseUsSection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
       </ScrollReveal>
 
-      {/* 9. Interactive Transformation Before & After */}
+      {/* 6. Testimonials / Reviews — social proof */}
       <ScrollReveal>
-        <TransformationSection />
+        <TestimonialsProofSection />
       </ScrollReveal>
 
-      {/* 5. BIM 5D Precision & Engineering */}
-      {/* <BimSection /> */}
-
-      {/* 6. Selected Works & Filterable Portfolios */}
+      {/* 7. Process — clarity and risk reduction */}
       <ScrollReveal>
-        <PortfolioSection onSelectProject={(project) => setSelectedProject(project)} />
+        <ProcessSection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
       </ScrollReveal>
 
-      {/* 7. Real-Time Budget Estimator */}
-      {/* <EstimatorSection onOpenConsultation={() => setIsConsultOpen(true)} /> */}
+      {/* 8. Budget & Timeline — practical concerns */}
+      <ScrollReveal>
+        <BudgetTimelineSection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
+      </ScrollReveal>
 
-      {/* 8. Accolades & Press */}
-      {/* <PressSection /> */}
+      {/* 9. About the Studio — personal trust */}
+      <ScrollReveal>
+        <AboutStudioSection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
+      </ScrollReveal>
 
-      {/* 9. Frequently Asked Questions */}
+      {/* 10. FAQs — resolve remaining objections */}
       <ScrollReveal>
         <FaqSection />
       </ScrollReveal>
 
-      {/* 10. Atelier Footer */}
+      {/* 11. Final CTA + Enquiry Form — conversion */}
+      <ScrollReveal>
+        <FinalCtaEnquirySection />
+      </ScrollReveal>
+
+      {/* Studio Atelier Footer */}
       <ScrollReveal>
         <Footer onOpenConsultation={() => setIsConsultOpen(true)} />
       </ScrollReveal>
 
-      {/* Full-Screen Studio Drawer */}
+      {/* Full-Screen Studio Drawer Menu */}
       <StudioDrawer
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}

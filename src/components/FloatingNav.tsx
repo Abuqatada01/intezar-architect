@@ -71,36 +71,66 @@ export default function FloatingNav({
         </div>
 
         {/* Col 3: Quick Section Links / Spacer */}
-        <div className="hidden lg:flex items-center px-8 gap-7 text-xs font-medium text-white/80">
+        <div className="hidden lg:flex items-center px-6 gap-4 xl:gap-5 text-xs font-medium text-white/85">
           <a
-            href="#people-behind-art"
+            href="#featured-projects"
             className="hover:text-white transition-colors duration-200"
           >
-            The Atelier
+            Projects
           </a>
           <a
-            href="#pillars"
+            href="#case-study"
             className="hover:text-white transition-colors duration-200"
           >
-            Pillars
+            Case Study
           </a>
           <a
-            href="#renovations"
+            href="#services"
             className="hover:text-white transition-colors duration-200"
           >
-            Renovations
+            Services
           </a>
           <a
-            href="#delivered-projects"
+            href="#why-choose-us"
             className="hover:text-white transition-colors duration-200"
           >
-            Selected Works
+            Why Us
+          </a>
+          <a
+            href="#testimonials"
+            className="hover:text-white transition-colors duration-200"
+          >
+            Reviews
+          </a>
+          <a
+            href="#process"
+            className="hover:text-white transition-colors duration-200"
+          >
+            Process
+          </a>
+          <a
+            href="#budget-timeline"
+            className="hover:text-white transition-colors duration-200"
+          >
+            Budget & Timeline
+          </a>
+          <a
+            href="#about-studio"
+            className="hover:text-white transition-colors duration-200"
+          >
+            About Studio
           </a>
           <a
             href="#faq"
             className="hover:text-white transition-colors duration-200"
           >
-            FAQ
+            FAQs
+          </a>
+          <a
+            href="#contact-enquiry"
+            className="hover:text-white transition-colors duration-200 font-semibold text-sky-200"
+          >
+            Inquire
           </a>
         </div>
         <div className="flex-1 lg:hidden" />
