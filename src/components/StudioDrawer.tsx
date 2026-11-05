@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Link from "next/link";
 import { X, ArrowRight } from "lucide-react";
 
 interface StudioDrawerProps {
@@ -9,18 +10,13 @@ interface StudioDrawerProps {
   onOpenConsultation: () => void;
 }
 
-const navItems = [
-  { num: "01", title: "Hero & Value Proposition", href: "#hero" },
-  { num: "02", title: "Featured Projects (Visual Interest)", href: "#featured-projects" },
-  { num: "03", title: "Case Study / Before & After", href: "#case-study" },
-  { num: "04", title: "Services & Scope", href: "#services" },
-  { num: "05", title: "Why Choose Us (Differentiation)", href: "#why-choose-us" },
-  { num: "06", title: "Testimonials & Reviews (Social Proof)", href: "#testimonials" },
-  { num: "07", title: "Our Process (Clarity & Risk Reduction)", href: "#process" },
-  { num: "08", title: "Budget & Timeline (Practical Concerns)", href: "#budget-timeline" },
-  { num: "09", title: "About the Studio (Personal Trust)", href: "#about-studio" },
-  { num: "10", title: "FAQs (Resolve Objections)", href: "#faq" },
-  { num: "11", title: "Discuss Your Project (Conversion)", href: "#contact-enquiry" },
+const studioPages = [
+  { num: "01", title: "Home", href: "/" },
+  { num: "02", title: "About Studio", href: "/about" },
+  { num: "03", title: "Services & Disciplines", href: "/services" },
+  { num: "04", title: "Articles & Blog", href: "/blog" },
+  { num: "05", title: "Contact Atelier", href: "/contact" },
+  { num: "06", title: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 export default function StudioDrawer({
@@ -65,42 +61,47 @@ export default function StudioDrawer({
           </button>
         </div>
 
-        {/* Nav links */}
-        <nav className="my-8 flex flex-col space-y-3">
-          {navItems.map((item) => (
-            <a
-              key={item.num}
-              href={item.href}
-              onClick={onClose}
-              className="group flex items-center justify-between py-2 border-b border-white/5 hover:border-white/20 transition-all text-white/90 hover:text-sky-400"
-            >
-              <div className="flex items-center gap-4">
-                <span className="text-xs font-mono text-white/40">
-                  {item.num}
-                </span>
-                <span className="text-lg font-medium tracking-tight">
-                  {item.title}
-                </span>
-              </div>
-              <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-sky-400" />
-            </a>
-          ))}
-        </nav>
+        {/* Dedicated Pages Navigation */}
+        <div className="my-8 flex-1 flex flex-col justify-center">
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400 block mb-4 font-semibold">
+            ATELIER DIRECTORY
+          </span>
+          <nav className="flex flex-col space-y-4">
+            {studioPages.map((item) => (
+              <Link
+                key={item.num}
+                href={item.href}
+                onClick={onClose}
+                className="group flex items-center justify-between py-2 border-b border-white/5 hover:border-white/20 transition-all text-white/90 hover:text-sky-400"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-xs font-mono text-white/40">
+                    {item.num}
+                  </span>
+                  <span className="text-xl font-medium tracking-tight">
+                    {item.title}
+                  </span>
+                </div>
+                <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-sky-400" />
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         {/* Footer CTA */}
-        <div className="pt-4 border-t border-white/10">
+        <div className="pt-6 border-t border-white/10">
           <button
             onClick={() => {
               onClose();
               onOpenConsultation();
             }}
-            className="w-full bg-white text-black font-semibold text-sm py-3 px-6 rounded flex items-center justify-center gap-3 hover:bg-slate-100 transition-transform active:scale-[0.98]"
+            className="w-full bg-white text-black font-semibold text-sm py-3.5 px-6 rounded-full flex items-center justify-center gap-3 hover:bg-slate-100 transition-transform active:scale-[0.98] shadow-lg"
           >
-            <span>Start a project</span>
+            <span>Book Consultation</span>
             <span className="w-2.5 h-2.5 bg-black inline-block rounded-[1px]" />
           </button>
-          <p className="text-[11px] text-center text-white/40 mt-3">
-            Ateliers in Paris • Dubai • London • Mumbai
+          <p className="text-[11px] text-center text-white/40 mt-3 font-mono">
+            Direct Atelier Practice • Islamabad & International
           </p>
         </div>
       </div>

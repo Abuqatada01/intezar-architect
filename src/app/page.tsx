@@ -104,7 +104,9 @@ export default function Home() {
 
       {/* 11. Final CTA + Enquiry Form — conversion */}
       <ScrollReveal>
-        <FinalCtaEnquirySection />
+        <FinalCtaEnquirySection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
       </ScrollReveal>
 
       {/* Studio Atelier Footer */}

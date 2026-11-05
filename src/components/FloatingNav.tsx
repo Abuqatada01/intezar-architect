@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface FloatingNavProps {
   onOpenMenu: () => void;
@@ -43,11 +44,11 @@ export default function FloatingNav({
           : "opacity-0 -translate-y-full pointer-events-none shadow-none"
       }`}
     >
-      <div className="w-full bg-[#43729b]/95 backdrop-blur-md text-white grid grid-cols-[auto_1fr_auto] sm:grid-cols-[210px_220px_1fr_auto] h-[68px] min-h-[68px] border-b border-white/20 items-stretch select-none">
+      <div className="w-full bg-[#43729b]/95 backdrop-blur-md text-white grid grid-cols-[auto_1fr_auto] sm:grid-cols-[210px_200px_1fr_auto] h-[68px] min-h-[68px] border-b border-white/20 items-stretch select-none">
         {/* Col 1: Brand */}
-        <div className="flex items-center px-6 sm:px-8 border-r border-white/20">
-          <a
-            href="#hero"
+        <div className="flex items-center px-4 sm:px-8 border-r border-white/20">
+          <Link
+            href="/"
             className="flex items-center gap-2.5 font-semibold text-base tracking-tight text-white hover:opacity-90 transition-opacity"
           >
             <svg
@@ -58,7 +59,7 @@ export default function FloatingNav({
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
             <span className="font-heading whitespace-nowrap">Architect Intezar</span>
-          </a>
+          </Link>
         </div>
 
         {/* Col 2: Tagline */}
@@ -70,73 +71,49 @@ export default function FloatingNav({
           </span>
         </div>
 
-        {/* Col 3: Quick Section Links / Spacer */}
-        <div className="hidden lg:flex items-center px-6 gap-4 xl:gap-5 text-xs font-medium text-white/85">
-          <a
-            href="#featured-projects"
-            className="hover:text-white transition-colors duration-200"
+        {/* Col 3: Dedicated Page Links (Replacing section anchors) */}
+        <div className="hidden lg:flex items-center px-8 gap-6 xl:gap-8 text-xs font-mono tracking-wider uppercase text-white/90">
+          <Link
+            href="/"
+            className="hover:text-white transition-colors duration-200 py-1"
           >
-            Projects
-          </a>
-          <a
-            href="#case-study"
-            className="hover:text-white transition-colors duration-200"
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className="hover:text-white transition-colors duration-200 py-1"
           >
-            Case Study
-          </a>
-          <a
-            href="#services"
-            className="hover:text-white transition-colors duration-200"
+            About Us
+          </Link>
+          <Link
+            href="/services"
+            className="hover:text-white transition-colors duration-200 py-1"
           >
             Services
-          </a>
-          <a
-            href="#why-choose-us"
-            className="hover:text-white transition-colors duration-200"
+          </Link>
+          <Link
+            href="/blog"
+            className="hover:text-white transition-colors duration-200 py-1"
           >
-            Why Us
-          </a>
-          <a
-            href="#testimonials"
-            className="hover:text-white transition-colors duration-200"
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-white transition-colors duration-200 py-1"
           >
-            Reviews
-          </a>
-          <a
-            href="#process"
-            className="hover:text-white transition-colors duration-200"
+            Contact Us
+          </Link>
+          <Link
+            href="/privacy-policy"
+            className="hover:text-white transition-colors duration-200 py-1 text-white/80"
           >
-            Process
-          </a>
-          <a
-            href="#budget-timeline"
-            className="hover:text-white transition-colors duration-200"
-          >
-            Budget & Timeline
-          </a>
-          <a
-            href="#about-studio"
-            className="hover:text-white transition-colors duration-200"
-          >
-            About Studio
-          </a>
-          <a
-            href="#faq"
-            className="hover:text-white transition-colors duration-200"
-          >
-            FAQs
-          </a>
-          <a
-            href="#contact-enquiry"
-            className="hover:text-white transition-colors duration-200 font-semibold text-sky-200"
-          >
-            Inquire
-          </a>
+            Privacy
+          </Link>
         </div>
         <div className="flex-1 lg:hidden" />
 
         {/* Col 4: Explore / Menu trigger & Consultation */}
-        <div className="flex items-center gap-4 sm:gap-6 px-6 sm:px-8 md:px-10 border-l lg:border-l border-white/20">
+        <div className="flex items-center gap-3 sm:gap-6 px-4 sm:px-8 md:px-10 border-l lg:border-l border-white/20">
           <button
             onClick={onOpenConsultation}
             className="hidden md:inline-flex items-center gap-2 text-xs font-medium bg-white/15 hover:bg-white text-white hover:text-slate-900 px-3.5 py-1.5 rounded transition-all duration-200"

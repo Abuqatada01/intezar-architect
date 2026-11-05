@@ -99,33 +99,40 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const currentStepData = steps[activeStep];
-
   const scrollToStep = (index: number) => {
-    setActiveStep(index);
-    const target = stepRefs.current[index];
-    if (target) {
-      const yOffset = -120;
-      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
+    const el = stepRefs.current[index];
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
+
+  const currentStepData = steps[activeStep] || steps[0];
 
   return (
     <section
       id="process"
-      className="py-24 lg:py-36 bg-[#12161c] text-white border-b border-white/10 select-none relative"
+      className="py-16 sm:py-24 lg:py-32 bg-[#2B231D] text-white border-b border-stone-800 select-none relative"
     >
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* ================= LEFT COLUMN: EXPANDED FIXED / STICKY PROJECT IMAGE ================= */}
-          <div className="lg:col-span-6 lg:sticky lg:top-24 xl:top-28 z-20">
-            {/* Enlarged Image Container with Smooth 700ms Crossfade */}
-            <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[580px] xl:h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-900 border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.5)] group">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
+        {/* Mobile Header (Shown on mobile above the sticky image) */}
+        <div className="block lg:hidden mb-8">
+          <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-white/50 block mb-2">
+            How we work
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-heading font-normal text-white leading-[1.15] tracking-[-0.03em]">
+            Five steps from the first visit to the day you move in.
+          </h2>
+        </div>
+
+        {/* 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start relative">
+          {/* ================= LEFT COLUMN: STICKY ENLARGED IMAGE ================= */}
+          <div className="lg:col-span-6 sticky top-16 sm:top-20 lg:top-24 self-start z-20">
+            {/* Enlarged Fixed/Sticky Image Canvas */}
+            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/4.3] xl:aspect-[4/4.1] rounded-2xl overflow-hidden bg-stone-900 border border-white/10 shadow-2xl">
               {steps.map((item, idx) => {
                 const isActive = activeStep === idx;
 
@@ -155,11 +162,11 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
             </div>
 
             {/* Captions Under Image matching screenshot */}
-            <div className="flex items-center justify-between text-xs sm:text-[13px] font-mono text-white/70 pt-3.5 px-1">
+            <div className="flex items-center justify-between text-[11px] sm:text-[13px] font-mono text-white/70 pt-2.5 sm:pt-3.5 px-1 bg-[#2B231D]/90 backdrop-blur-sm">
               <span className="tracking-wider uppercase text-white/80 font-medium">
                 {currentStepData.stageTag}
               </span>
-              <span className="text-white/50 tracking-wide">
+              <span className="text-white/50 tracking-wide truncate max-w-[200px] sm:max-w-none text-right">
                 {currentStepData.caption}
               </span>
             </div>
@@ -167,8 +174,8 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
 
           {/* ================= RIGHT COLUMN: STACK SCROLL ALL 5 STEPS ================= */}
           <div className="lg:col-span-6 lg:pl-4 xl:pl-8">
-            {/* Top Header matching screenshot */}
-            <div className="mb-14 sm:mb-20">
+            {/* Desktop Top Header */}
+            <div className="hidden lg:block mb-14 sm:mb-20">
               <span className="text-xs font-mono uppercase tracking-[0.22em] text-white/50 block mb-4">
                 How we work
               </span>
@@ -190,12 +197,12 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
                       stepRefs.current[idx] = el;
                     }}
                     onClick={() => scrollToStep(idx)}
-                    className={`py-8 sm:py-12 lg:py-16 transition-all duration-500 cursor-pointer group ${
+                    className={`py-6 sm:py-12 lg:py-16 transition-all duration-500 cursor-pointer group ${
                       isActive ? "opacity-100" : "opacity-35 hover:opacity-80"
                     }`}
                   >
                     {/* Top Row: Step Number on Left + Duration on Right */}
-                    <div className="flex items-center justify-between text-xs sm:text-sm font-mono tracking-wider mb-3">
+                    <div className="flex items-center justify-between text-xs sm:text-sm font-mono tracking-wider mb-2 sm:mb-3">
                       <span
                         className={`transition-colors duration-300 ${
                           isActive ? "text-sky-400 font-semibold" : "text-white/50"
@@ -215,7 +222,7 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
 
                     {/* Step Title */}
                     <h3
-                      className={`text-2xl sm:text-3xl lg:text-[36px] font-heading font-medium tracking-tight mb-3.5 transition-colors duration-300 ${
+                      className={`text-xl sm:text-3xl lg:text-[36px] font-heading font-medium tracking-tight mb-2 sm:mb-3.5 transition-colors duration-300 ${
                         isActive ? "text-white" : "text-white/50 group-hover:text-white/90"
                       }`}
                     >
@@ -223,11 +230,7 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
                     </h3>
 
                     {/* Step Description */}
-                    <p
-                      className={`text-sm sm:text-[15px] font-light leading-relaxed max-w-lg transition-colors duration-300 ${
-                        isActive ? "text-white/85" : "text-white/45 group-hover:text-white/70"
-                      }`}
-                    >
+                    <p className="text-xs sm:text-base font-light text-white/70 leading-relaxed max-w-lg">
                       {step.description}
                     </p>
                   </div>
@@ -235,15 +238,15 @@ export default function ProcessSection({ onOpenConsultation }: ProcessSectionPro
               })}
             </div>
 
-            {/* Bottom Atelier Action Call */}
+            {/* Bottom Consultation CTA */}
             {onOpenConsultation && (
-              <div className="pt-12 pb-6">
+              <div className="pt-8 sm:pt-14 pb-4">
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center gap-3 bg-white text-slate-950 px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-xl hover:bg-slate-100 hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-stone-900 px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-xl hover:bg-stone-100 transition-all cursor-pointer active:scale-95 text-center"
                 >
-                  <span>Start Step 01: Schedule First Visit</span>
-                  <ArrowRight className="w-4 h-4 text-slate-900" />
+                  <span>Book Initial Site Walkthrough</span>
+                  <ArrowRight className="w-4 h-4 text-stone-900" />
                 </button>
               </div>
             )}

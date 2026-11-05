@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { MessageCircle, Instagram, Linkedin, MapPin, Mail, ArrowUp } from "lucide-react";
 
 interface FooterProps {
@@ -54,63 +55,44 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
           {/* Middle Block: Pages Nav */}
           <div className="lg:col-span-3 xl:col-span-3 lg:pl-8">
             <h4 className="text-[11px] font-mono uppercase tracking-[0.16em] text-slate-900 font-semibold mb-4">
-              HOMEPAGE SEQUENCE
+              STUDIO PAGES
             </h4>
-            <ul className="space-y-1.5 text-xs text-slate-700 font-normal">
+            <ul className="space-y-3 text-xs sm:text-[13px] text-slate-700 font-medium">
               <li>
-                <a href="#hero" className="hover:text-black transition-colors">
-                  01 · Hero & Relevance
-                </a>
+                <Link href="/" className="hover:text-black transition-colors flex items-center justify-between">
+                  <span>Home</span>
+                  <span className="text-slate-400 font-mono text-[11px]">→</span>
+                </Link>
               </li>
               <li>
-                <a href="#featured-projects" className="hover:text-black transition-colors">
-                  02 · Featured Projects
-                </a>
+                <Link href="/about" className="hover:text-black transition-colors flex items-center justify-between">
+                  <span>About Us</span>
+                  <span className="text-slate-400 font-mono text-[11px]">→</span>
+                </Link>
               </li>
               <li>
-                <a href="#case-study" className="hover:text-black transition-colors">
-                  03 · Case Study (Proof)
-                </a>
+                <Link href="/services" className="hover:text-black transition-colors flex items-center justify-between">
+                  <span>Services</span>
+                  <span className="text-slate-400 font-mono text-[11px]">→</span>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-black transition-colors">
-                  04 · Services & Scope
-                </a>
+                <Link href="/blog" className="hover:text-black transition-colors flex items-center justify-between">
+                  <span>Articles & Blog</span>
+                  <span className="text-slate-400 font-mono text-[11px]">→</span>
+                </Link>
               </li>
               <li>
-                <a href="#why-choose-us" className="hover:text-black transition-colors">
-                  05 · Why Choose Us
-                </a>
+                <Link href="/contact" className="hover:text-black transition-colors flex items-center justify-between">
+                  <span>Contact Us</span>
+                  <span className="text-slate-400 font-mono text-[11px]">→</span>
+                </Link>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-black transition-colors">
-                  06 · Testimonials & Reviews
-                </a>
-              </li>
-              <li>
-                <a href="#process" className="hover:text-black transition-colors">
-                  07 · The 4-Phase Process
-                </a>
-              </li>
-              <li>
-                <a href="#budget-timeline" className="hover:text-black transition-colors">
-                  08 · Budget & Timeline
-                </a>
-              </li>
-              <li>
-                <a href="#about-studio" className="hover:text-black transition-colors">
-                  09 · About the Studio
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-black transition-colors">
-                  10 · FAQs (Resolve Doubts)
-                </a>
-              </li>
-              <li>
-                <a href="#contact-enquiry" className="hover:text-black transition-colors font-medium text-sky-700">
-                  11 · Discuss Your Project
-                </a>
+                <Link href="/privacy-policy" className="hover:text-black transition-colors flex items-center justify-between">
+                  <span>Privacy Policy</span>
+                  <span className="text-slate-400 font-mono text-[11px]">→</span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -180,17 +162,24 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-[11px] text-slate-500 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-[11px] text-slate-500 pt-2 items-center">
           <div>
             <span className="text-slate-500">
               ARCHITECT INTEZAR © {new Date().getFullYear()} All rights reserved.
             </span>
           </div>
 
-          <div className="md:text-center">
+          <div className="md:text-center space-x-3">
             <span className="text-slate-400">
-              PCATP Registered • Residential & Commercial Atelier
+              PCATP Registered • Luxury Architecture
             </span>
+            <span>•</span>
+            <Link
+              href="/privacy-policy"
+              className="text-slate-600 hover:text-slate-900 underline underline-offset-2 transition-colors font-mono"
+            >
+              Privacy Policy
+            </Link>
           </div>
 
           <div className="md:text-right">

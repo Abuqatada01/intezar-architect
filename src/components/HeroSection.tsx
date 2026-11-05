@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 /**
@@ -82,7 +83,7 @@ export default function HeroSection({
         - Mobile: Framed rounded canvas with blue gradient & outer padding
         - Large devices (md+): Edge-to-edge full screen container with background slideshow
       */}
-      <div className="relative w-full h-[calc(100vh-0px)] sm:h-[calc(100vh-32px)] md:h-[100vh] min-h-[640px] md:min-h-[100vh] md:max-h-none rounded-[24px] sm:rounded-[32px] md:rounded-none overflow-hidden border border-white/20 md:border-none shadow-2xl md:shadow-none flex flex-col justify-between bg-gradient-to-b from-[#3a5879] via-[#486b91] to-[#2b415a] md:bg-none">
+      <div className="relative w-full h-auto min-h-[100dvh] md:h-[100vh] rounded-[24px] sm:rounded-[32px] md:rounded-none overflow-hidden border border-white/20 md:border-none shadow-2xl md:shadow-none flex flex-col justify-between bg-gradient-to-b from-[#3a5879] via-[#486b91] to-[#2b415a] md:bg-none pb-6 md:pb-0">
 
         {/* Full-Screen Architectural Background Slideshow (Large Devices Only) */}
         <div className="hidden md:block absolute inset-0 z-0 overflow-hidden">
@@ -133,63 +134,42 @@ export default function HeroSection({
             Intezar Ahmed
           </a>
 
-          {/* Center Links (Desktop only - Muted & Elegantly Lowercased with commas) */}
-          <nav className="hidden md:flex items-center gap-2 text-white/90 text-xs sm:text-[13px] font-normal tracking-wide drop-shadow-sm">
-            <a
-              href="#featured-projects"
-              className="hover:text-white transition-colors duration-200"
+          {/* Center Links (Desktop only - Dedicated Pages) */}
+          <nav className="hidden md:flex items-center gap-2 text-white/90 text-xs sm:text-[13px] font-normal tracking-wide drop-shadow-sm font-mono">
+            <Link
+              href="/about"
+              className="hover:text-white transition-colors duration-200 uppercase tracking-wider"
             >
-              projects
-            </a>
+              about us
+            </Link>
             <span className="text-white/40">,</span>
-            <a
-              href="#case-study"
-              className="hover:text-white transition-colors duration-200"
-            >
-              case study
-            </a>
-            <span className="text-white/40">,</span>
-            <a
-              href="#services"
-              className="hover:text-white transition-colors duration-200"
+            <Link
+              href="/services"
+              className="hover:text-white transition-colors duration-200 uppercase tracking-wider"
             >
               services
-            </a>
+            </Link>
             <span className="text-white/40">,</span>
-            <a
-              href="#why-choose-us"
-              className="hover:text-white transition-colors duration-200"
+            <Link
+              href="/blog"
+              className="hover:text-white transition-colors duration-200 uppercase tracking-wider"
             >
-              why us
-            </a>
+              blog
+            </Link>
             <span className="text-white/40">,</span>
-            <a
-              href="#testimonials"
-              className="hover:text-white transition-colors duration-200"
+            <Link
+              href="/contact"
+              className="hover:text-white transition-colors duration-200 uppercase tracking-wider"
             >
-              proof
-            </a>
+              contact us
+            </Link>
             <span className="text-white/40">,</span>
-            <a
-              href="#process"
-              className="hover:text-white transition-colors duration-200"
+            <Link
+              href="/privacy-policy"
+              className="hover:text-white transition-colors duration-200 uppercase tracking-wider text-white/70"
             >
-              process & cost
-            </a>
-            <span className="text-white/40">,</span>
-            <a
-              href="#meet-architect"
-              className="hover:text-white transition-colors duration-200"
-            >
-              the architect
-            </a>
-            <span className="text-white/40">,</span>
-            <a
-              href="#contact-enquiry"
-              className="hover:text-white transition-colors duration-200"
-            >
-              contact
-            </a>
+              privacy
+            </Link>
           </nav>
 
           {/* Right Menu Trigger */}
@@ -208,24 +188,24 @@ export default function HeroSection({
         </header>
 
         {/* 2. Middle Content Area: Editorial Headline & Dialogue Copy */}
-        <div className="relative z-20 w-full px-6 sm:px-10 md:px-14 lg:px-20 pt-6 sm:pt-10 md:pt-14 pb-2">
+        <div className="relative z-20 w-full px-4 sm:px-10 md:px-14 lg:px-20 pt-6 sm:pt-10 md:pt-14 pb-2">
           {/* Location & Value Prop Badge */}
           <div className="flex items-center gap-2 mb-3 sm:mb-4">
-            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-3 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-mono font-medium text-white shadow-sm">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-3 sm:px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium text-white shadow-sm">
               <MapPin className="w-3 h-3 text-sky-300 shrink-0" />
               <span>Mumbai • India • Nationwide & International Commissions</span>
             </span>
           </div>
 
           {/* Main Statement */}
-          <h1 className="text-white font-heading capitalize font-normal sm:font-medium text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[1.08] sm:leading-[1.05] tracking-[-0.03em] max-w-5xl drop-shadow-md">
+          <h1 className="text-white font-heading capitalize font-normal sm:font-medium text-3xl sm:text-5xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[1.1] sm:leading-[1.05] tracking-[-0.03em] max-w-5xl drop-shadow-md">
             We don't just design ,
             <br />
             we create landmarks
           </h1>
 
           {/* Two-Column Bottom Row in Mid-Section: Subtext on Left & Pill CTA on Right */}
-          <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-12">
+          <div className="mt-5 sm:mt-8 md:mt-10 flex flex-col md:flex-row md:items-end justify-between gap-5 md:gap-12">
             {/* Left Dialogue Paragraph */}
             <p className="text-white/85 md:text-black/65 text-xs sm:text-sm md:text-[14px] xl:text-lg font-semibold leading-relaxed max-w-lg drop-shadow-sm">
               Bespoke architecture and luxury interior design atelier led by Architect Intezar Ahmed. We craft spaces where light, texture, and proportion form a quiet dialogue between architecture and emotion — timeless, balanced, and deeply human.
@@ -236,7 +216,7 @@ export default function HeroSection({
               <a
                 href="#featured-projects"
                 onClick={handleScrollToProjects}
-                className="inline-flex items-center gap-3 bg-white text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:bg-slate-100 hover:scale-[1.03] active:scale-95 transition-all duration-200 group cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-slate-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:bg-slate-100 hover:scale-[1.03] active:scale-95 transition-all duration-200 group cursor-pointer text-center"
               >
                 <span>EXPLORE OUR PROJECTS</span>
                 <ArrowRight className="w-4 h-4 text-slate-900 group-hover:translate-x-1 transition-transform" />
@@ -246,8 +226,8 @@ export default function HeroSection({
         </div>
 
         {/* 2.5 Mobile Center Architectural Feature (Connected to active slideshow) */}
-        <div className="md:hidden relative z-20 px-6 my-auto py-2">
-          <div className="relative w-full h-[290px] sm:h-[360px] rounded-2xl overflow-hidden border border-white/25 shadow-2xl group">
+        <div className="md:hidden relative z-20 px-4 sm:px-6 my-auto py-2">
+          <div className="relative w-full h-[220px] sm:h-[320px] rounded-2xl overflow-hidden border border-white/25 shadow-2xl group">
             {slides.map((slideSrc, index) => {
               const isActive = index === currentSlide;
               return (
