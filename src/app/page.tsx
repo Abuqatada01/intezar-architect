@@ -26,7 +26,7 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#43729b] selection:text-white">
       {/* 
         ========================================================================
         FINAL RECOMMENDED HOMEPAGE SEQUENCE (11 SECTIONS)

@@ -101,7 +101,7 @@ export default function ServicesPage() {
   const [isConsultOpen, setIsConsultOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#43729b] selection:text-white">
       {/* Top Universal Navbar */}
       <InnerNavbar
         activePath="/services"
@@ -113,7 +113,7 @@ export default function ServicesPage() {
         <div className="max-w-[1360px] mx-auto px-6 sm:px-10 lg:px-12">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+              <Sparkles className="w-3.5 h-3.5 text-[#5485b0]" />
               <span>FOUR DISCIPLINES • ONE ACCOUNTABLE ATELIER</span>
             </div>
 
@@ -180,7 +180,7 @@ export default function ServicesPage() {
                   }`}
                 >
                   <div>
-                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-sky-700 font-semibold block mb-2">
+                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#43729b] font-semibold block mb-2">
                       {item.num} · {item.code}
                     </span>
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold text-slate-950 tracking-tight leading-tight">
@@ -213,7 +213,7 @@ export default function ServicesPage() {
                   <div className="pt-2">
                     <button
                       onClick={() => setIsConsultOpen(true)}
-                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-900 hover:text-sky-700 underline underline-offset-4 decoration-slate-300 transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-900 hover:text-[#43729b] underline underline-offset-4 decoration-slate-300 transition-colors cursor-pointer"
                     >
                       <span>Inquire about this scope</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -284,7 +284,7 @@ export default function ServicesPage() {
 
             {/* Model 2: Turnkey Design & Build Execution */}
             <div className="bg-[#151518] text-white rounded-3xl p-8 border border-white/10 shadow-xl flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-4 right-4 bg-amber-400 text-slate-950 text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full">
+              <div className="absolute top-4 right-4 bg-[#43729b] text-white text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full shadow-sm">
                 RECOMMENDED
               </div>
 
@@ -301,19 +301,19 @@ export default function ServicesPage() {
 
                 <ul className="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-5">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#5485b0]" />
                     Everything in Option A Included
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#5485b0]" />
                     100% Locked Itemized BOQ Contract
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#5485b0]" />
                     Direct Material Sourcing (Italian stone, timber)
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#5485b0]" />
                     Guaranteed Handover Date With Zero Clashes
                   </li>
                 </ul>
@@ -322,7 +322,7 @@ export default function ServicesPage() {
               <div className="pt-8 mt-6 border-t border-white/10">
                 <button
                   onClick={() => setIsConsultOpen(true)}
-                  className="w-full bg-[#f59e0b] hover:bg-[#d97706] text-slate-950 font-semibold py-3 rounded-xl text-xs uppercase tracking-wider transition-colors shadow-md"
+                  className="w-full bg-[#43729b] hover:bg-[#315777] text-white font-semibold py-3 rounded-xl text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
                 >
                   Request Turnkey Proposal
                 </button>

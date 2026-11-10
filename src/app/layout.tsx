@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
-      <body className="antialiased bg-white text-slate-900 selection:bg-sky-500 selection:text-white">
+      <body className="antialiased bg-white text-slate-900 selection:bg-[#43729b] selection:text-white">
         {children}
       </body>
     </html>

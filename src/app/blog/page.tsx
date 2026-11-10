@@ -152,7 +152,7 @@ export default function BlogPage() {
   const featuredArticle = articles.find((a) => a.featured) || articles[0];
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#43729b] selection:text-white">
       {/* Top Universal Navbar */}
       <InnerNavbar
         activePath="/blog"
@@ -164,7 +164,7 @@ export default function BlogPage() {
         <div className="max-w-[1360px] mx-auto px-6 sm:px-10 lg:px-12">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-slate-200/80 border border-slate-300 text-slate-800 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-6">
-              <BookOpen className="w-3.5 h-3.5 text-sky-600" />
+              <BookOpen className="w-3.5 h-3.5 text-[#43729b]" />
               <span>THE ATELIER JOURNAL & MONOGRAPHS</span>
             </div>
 
@@ -201,7 +201,7 @@ export default function BlogPage() {
 
               <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-3 text-xs font-mono text-amber-400 mb-4">
+                  <div className="flex items-center gap-3 text-xs font-mono text-[#5485b0] mb-4">
                     <span className="uppercase tracking-wider font-semibold">
                       {featuredArticle.category}
                     </span>
@@ -209,7 +209,7 @@ export default function BlogPage() {
                     <span className="text-slate-400">{featuredArticle.readTime}</span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold tracking-tight text-white mb-4 leading-snug group-hover:text-amber-300 transition-colors">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold tracking-tight text-white mb-4 leading-snug group-hover:text-[#5485b0] transition-colors">
                     {featuredArticle.title}
                   </h2>
 
@@ -275,7 +275,7 @@ export default function BlogPage() {
                       <span>{article.date}</span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-heading font-semibold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug mb-3">
+                    <h3 className="text-lg sm:text-xl font-heading font-semibold text-slate-900 group-hover:text-[#43729b] transition-colors leading-snug mb-3">
                       {article.title}
                     </h3>
 
@@ -287,7 +287,7 @@ export default function BlogPage() {
 
                 <div className="px-6 sm:px-7 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
                   <span>{article.author}</span>
-                  <span className="text-slate-900 font-medium group-hover:text-sky-700 inline-flex items-center gap-1">
+                  <span className="text-slate-900 font-medium group-hover:text-[#43729b] inline-flex items-center gap-1">
                     Read ↗
                   </span>
                 </div>
@@ -349,7 +349,7 @@ export default function BlogPage() {
 
             <div className="space-y-6">
               <div>
-                <span className="inline-block bg-sky-100 text-sky-800 text-xs font-mono font-medium px-3 py-1 rounded-full mb-3">
+                <span className="inline-block bg-[#43729b]/10 text-[#43729b] text-xs font-mono font-medium px-3 py-1 rounded-full mb-3">
                   {activeArticle.category}
                 </span>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-slate-950 leading-tight">

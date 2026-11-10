@@ -192,7 +192,7 @@ export default function HeroSection({
           {/* Location & Value Prop Badge */}
           <div className="flex items-center gap-2 mb-3 sm:mb-4">
             <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/25 px-3 sm:px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium text-white shadow-sm">
-              <MapPin className="w-3 h-3 text-sky-300 shrink-0" />
+              <MapPin className="w-3 h-3 text-[#5485b0] shrink-0" />
               <span>Mumbai • India • Nationwide & International Commissions</span>
             </span>
           </div>

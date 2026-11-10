@@ -51,7 +51,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#43729b] selection:text-white">
       {/* Top Universal Navbar */}
       <InnerNavbar
         activePath="/contact"
@@ -63,7 +63,7 @@ export default function ContactPage() {
         <div className="max-w-[1360px] mx-auto px-6 sm:px-10 lg:px-12">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-slate-200/80 border border-slate-300 text-slate-800 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+              <Sparkles className="w-3.5 h-3.5 text-[#43729b]" />
               <span>DIRECT ATELIER COMMUNICATION</span>
             </div>
 
@@ -87,7 +87,7 @@ export default function ContactPage() {
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-sky-700 font-semibold block mb-1">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#43729b] font-semibold block mb-1">
                       PROJECT DISCOVERY INQUIRY
                     </span>
                     <h2 className="text-2xl font-heading font-semibold text-slate-900">
@@ -310,7 +310,7 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-8">
               {/* Studio Desk Card */}
               <div className="bg-[#121418] text-white rounded-[32px] p-8 border border-slate-800 shadow-xl">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-sky-400 block mb-3 font-semibold">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#5485b0] block mb-3 font-semibold">
                   DIRECT ATELIER DESK
                 </span>
                 <h2 className="text-2xl font-heading font-semibold mb-6">
@@ -343,14 +343,14 @@ export default function ContactPage() {
                     href="tel:+32493751798"
                     className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10 group"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#43729b]/20 text-[#5485b0] flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
                       <span className="block text-[11px] font-mono text-slate-400 uppercase tracking-wider">
                         Direct Phone Line
                       </span>
-                      <span className="block text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">
+                      <span className="block text-sm font-semibold text-white group-hover:text-[#5485b0] transition-colors">
                         +32 493 75 17 98
                       </span>
                     </div>
@@ -361,14 +361,14 @@ export default function ContactPage() {
                     href="mailto:intezar@architectintezar.com"
                     className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10 group"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#43729b]/20 text-[#5485b0] flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
                       <span className="block text-[11px] font-mono text-slate-400 uppercase tracking-wider">
                         Email Correspondence
                       </span>
-                      <span className="block text-sm font-semibold text-white group-hover:text-amber-300 transition-colors truncate">
+                      <span className="block text-sm font-semibold text-white group-hover:text-[#5485b0] transition-colors truncate">
                         intezar@architectintezar.com
                       </span>
                     </div>
@@ -376,7 +376,7 @@ export default function ContactPage() {
 
                   {/* Physical Address */}
                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="w-11 h-11 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#43729b]/20 text-[#5485b0] flex items-center justify-center shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -394,7 +394,7 @@ export default function ContactPage() {
               {/* What Happens Next Guide */}
               <div className="bg-slate-50 rounded-[28px] p-7 border border-slate-200">
                 <h3 className="text-sm font-heading font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-sky-700" />
+                  <ShieldCheck className="w-4 h-4 text-[#43729b]" />
                   <span>The Atelier Consultation Protocol</span>
                 </h3>
 

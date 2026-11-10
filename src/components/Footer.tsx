@@ -104,7 +104,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
             </h4>
             <div className="space-y-3 text-xs sm:text-[13px] text-slate-700 leading-relaxed font-normal">
               <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-sky-700 mt-0.5 shrink-0" />
+                <MapPin className="w-4 h-4 text-[#43729b] mt-0.5 shrink-0" />
                 <span>
                   Executive Studio, Blue Area / F-7
                   <br />
@@ -112,7 +112,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 </span>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-sky-700 shrink-0" />
+                <Mail className="w-4 h-4 text-[#43729b] shrink-0" />
                 <a
                   href="mailto:atelier@intezarahmed.com"
                   className="text-slate-900 underline underline-offset-2 decoration-slate-300 hover:decoration-black transition-colors"
@@ -184,7 +184,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
 
           <div className="md:text-right">
             <p className="text-slate-500">
-              Crafted for timeless architectural living <span className="text-sky-700 font-bold">◆</span>
+              Crafted for timeless architectural living <span className="text-[#43729b] font-bold">◆</span>
             </p>
           </div>
         </div>

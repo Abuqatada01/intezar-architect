@@ -147,7 +147,7 @@ export default function ProcessBudgetTimelineSection({
                 : "border-transparent text-slate-500 hover:text-slate-800"
             }`}
           >
-            <Calendar className="w-4 h-4 text-amber-600" />
+            <Calendar className="w-4 h-4 text-[#43729b]" />
             <span>3. How Long Will It Take? (Timeline)</span>
           </button>
         </div>
@@ -452,7 +452,7 @@ export default function ProcessBudgetTimelineSection({
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                  <div className="w-10 h-10 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center font-bold font-mono text-sm mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#43729b]/10 text-[#43729b] flex items-center justify-center font-bold font-mono text-sm mb-4">
                     01
                   </div>
                   <h4 className="text-base font-heading font-semibold text-slate-900 mb-2">
@@ -476,7 +476,7 @@ export default function ProcessBudgetTimelineSection({
                 </div>
 
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                  <div className="w-10 h-10 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold font-mono text-sm mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#43729b]/10 text-[#43729b] flex items-center justify-center font-bold font-mono text-sm mb-4">
                     03
                   </div>
                   <h4 className="text-base font-heading font-semibold text-slate-900 mb-2">

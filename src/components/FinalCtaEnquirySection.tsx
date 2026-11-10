@@ -59,8 +59,8 @@ export default function FinalCtaEnquirySection({
       className="py-16 sm:py-24 lg:py-32 bg-[#f6f7f9] text-slate-900 border-b border-slate-200/80 select-none relative overflow-hidden"
     >
       {/* Subtle atmospheric ambient glow */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#43729b]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-[#43729b]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Floating Rounded Canvas Container matching reference */}
@@ -145,7 +145,7 @@ export default function FinalCtaEnquirySection({
                   </span>
                   <a
                     href="mailto:intezar@architectintezar.com"
-                    className="text-xs font-medium text-slate-900 hover:text-sky-600 transition-colors truncate block"
+                    className="text-xs font-medium text-slate-900 hover:text-[#43729b] transition-colors truncate block"
                   >
                     intezar@architectintezar.com
                   </a>

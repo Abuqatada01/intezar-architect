@@ -63,7 +63,7 @@ export default function StudioDrawer({
 
         {/* Dedicated Pages Navigation */}
         <div className="my-8 flex-1 flex flex-col justify-center">
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400 block mb-4 font-semibold">
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#5485b0] block mb-4 font-semibold">
             ATELIER DIRECTORY
           </span>
           <nav className="flex flex-col space-y-4">
@@ -72,7 +72,7 @@ export default function StudioDrawer({
                 key={item.num}
                 href={item.href}
                 onClick={onClose}
-                className="group flex items-center justify-between py-2 border-b border-white/5 hover:border-white/20 transition-all text-white/90 hover:text-sky-400"
+                className="group flex items-center justify-between py-2 border-b border-white/5 hover:border-white/20 transition-all text-white/90 hover:text-[#5485b0]"
               >
                 <div className="flex items-center gap-4">
                   <span className="text-xs font-mono text-white/40">
@@ -82,7 +82,7 @@ export default function StudioDrawer({
                     {item.title}
                   </span>
                 </div>
-                <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-sky-400" />
+                <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#5485b0]" />
               </Link>
             ))}
           </nav>

@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
   const [isConsultOpen, setIsConsultOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#43729b] selection:text-white">
       {/* Top Universal Navbar */}
       <InnerNavbar
         activePath="/privacy-policy"

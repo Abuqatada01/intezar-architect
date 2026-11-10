@@ -50,7 +50,7 @@ export default function AboutStudioSection({
         {/* Visitor Journey Stage Tag */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-slate-100 border border-slate-200 text-slate-800 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-3 sm:mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            <Sparkles className="w-3.5 h-3.5 text-[#43729b]" />
             <span>03 · PERSONAL TRUST & LEADERSHIP</span>
             <span className="text-slate-400">•</span>
             <span className="italic">“Who is behind this? Can I trust them?”</span>
@@ -138,8 +138,8 @@ export default function AboutStudioSection({
               {/* Heading: Hi, I'm Intezar. */}
               <div className="mb-6 sm:mb-8">
                 {/* Prestige Pedigree Badge */}
-                <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/90 text-amber-900 text-[11px] sm:text-xs font-mono font-medium px-3.5 py-1.5 rounded-full mb-3.5 shadow-xs">
-                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shrink-0" />
+                <div className="inline-flex items-center gap-2 bg-[#43729b]/10 border border-[#43729b]/25 text-[#315777] text-[11px] sm:text-xs font-mono font-medium px-3.5 py-1.5 rounded-full mb-3.5 shadow-xs">
+                  <span className="w-2 h-2 rounded-full bg-[#43729b] animate-pulse shrink-0" />
                   <span className="tracking-wide">13 Years with Ar. Hafeez Contractor • 20+ Years Practice</span>
                 </div>
 
@@ -152,7 +152,7 @@ export default function AboutStudioSection({
               </div>
 
               {/* Story Bio Paragraphs */}
-              <div className="space-y-4 text-sm sm:text-[15px] text-slate-600 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">
+              <div className="space-y-4 text-sm sm:text-[15px] font-sans text-slate-600 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">
                 <p>
                   With over <strong className="text-slate-900 font-semibold">20+ years of comprehensive architectural practice</strong> — including <strong className="text-slate-900 font-semibold">13 formative years working alongside world-renowned master architect Hafeez Contractor (Padma Bhushan)</strong> — I lead an atelier dedicated to bespoke luxury residences, private villas, and landmark estates.
                 </p>
@@ -170,9 +170,9 @@ export default function AboutStudioSection({
                 <div className="bg-[#f8f9fb] hover:bg-slate-100/80 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
-                      20<span className="text-[#f59e0b]">+</span>
+                      20<span className="text-[#43729b]">+</span>
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#43729b]/10 text-[#43729b] flex items-center justify-center border border-[#43729b]/20 shrink-0">
                       <Clock className="w-4 h-4" />
                     </div>
                   </div>
@@ -180,19 +180,19 @@ export default function AboutStudioSection({
                     <h4 className="text-xs sm:text-sm font-heading font-semibold text-slate-900 mb-0.5">
                       Years Total Practice
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs font-sans text-slate-500 font-light leading-relaxed">
                       Two decades of master architectural leadership.
                     </p>
                   </div>
                 </div>
 
                 {/* Card 2: 13 Years with Hafeez Contractor (Special Highlight) */}
-                <div className="bg-gradient-to-br from-amber-50/90 to-slate-50 hover:from-amber-100/70 hover:to-slate-100 rounded-2xl p-4 sm:p-5 border border-amber-300/80 shadow-[0_4px_12px_rgba(245,158,11,0.08)] transition-all duration-200 flex flex-col justify-between">
+                <div className="bg-gradient-to-br from-[#43729b]/10 via-[#43729b]/5 to-white hover:from-[#43729b]/15 hover:to-slate-50 rounded-2xl p-4 sm:p-5 border border-[#43729b]/30 shadow-[0_4px_12px_rgba(67,114,155,0.08)] transition-all duration-200 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
-                      13<span className="text-amber-600 font-bold text-base sm:text-xl ml-0.5">Yrs</span>
+                      13<span className="text-[#43729b] font-bold text-base sm:text-xl ml-0.5">Yrs</span>
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center border border-amber-300/80 shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#43729b]/15 text-[#315777] flex items-center justify-center border border-[#43729b]/30 shrink-0">
                       <Award className="w-4 h-4" />
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function AboutStudioSection({
                     <h4 className="text-xs sm:text-sm font-heading font-bold text-slate-950 mb-0.5">
                       With Ar. Hafeez Contractor
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-600 font-normal leading-relaxed">
+                    <p className="text-[11px] sm:text-xs font-sans text-slate-600 font-normal leading-relaxed">
                       13 years with world-renowned master architect.
                     </p>
                   </div>
@@ -210,9 +210,9 @@ export default function AboutStudioSection({
                 <div className="bg-[#f8f9fb] hover:bg-slate-100/80 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
-                      30<span className="text-[#f59e0b]">+</span>
+                      30<span className="text-[#43729b]">+</span>
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#43729b]/10 text-[#43729b] flex items-center justify-center border border-[#43729b]/20 shrink-0">
                       <Building2 className="w-4 h-4" />
                     </div>
                   </div>
@@ -220,7 +220,7 @@ export default function AboutStudioSection({
                     <h4 className="text-xs sm:text-sm font-heading font-semibold text-slate-900 mb-0.5">
                       Projects Completed
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs font-sans text-slate-500 font-light leading-relaxed">
                       Luxury residences & bespoke private villas.
                     </p>
                   </div>
@@ -230,9 +230,9 @@ export default function AboutStudioSection({
                 <div className="bg-[#f8f9fb] hover:bg-slate-100/80 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
-                      99<span className="text-[#f59e0b]">%</span>
+                      99<span className="text-[#43729b]">%</span>
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#43729b]/10 text-[#43729b] flex items-center justify-center border border-[#43729b]/20 shrink-0">
                       <Percent className="w-4 h-4" />
                     </div>
                   </div>
@@ -240,7 +240,7 @@ export default function AboutStudioSection({
                     <h4 className="text-xs sm:text-sm font-heading font-semibold text-slate-900 mb-0.5">
                       Satisfaction Level
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs font-sans text-slate-500 font-light leading-relaxed">
                       Zero handover disputes and verified audits.
                     </p>
                   </div>

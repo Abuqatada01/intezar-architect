@@ -56,7 +56,7 @@ export default function ConsultationModal({
         {!isSubmitted ? (
           <div>
             <div className="text-center mb-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-sky-600 font-mono block mb-1">
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#43729b] font-mono block mb-1">
                 (ATELIER INQUIRY)
               </span>
               <h3 className="text-2xl font-heading font-semibold text-slate-900">
@@ -81,7 +81,7 @@ export default function ConsultationModal({
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500"
+                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#43729b]/20 focus:border-[#43729b]"
                   />
                 </div>
                 <div>
@@ -96,7 +96,7 @@ export default function ConsultationModal({
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500"
+                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#43729b]/20 focus:border-[#43729b]"
                   />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function ConsultationModal({
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500"
+                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#43729b]/20 focus:border-[#43729b]"
                   />
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function ConsultationModal({
                     onChange={(e) =>
                       setFormData({ ...formData, location: e.target.value })
                     }
-                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500"
+                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#43729b]/20 focus:border-[#43729b]"
                   />
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function ConsultationModal({
                   onChange={(e) =>
                     setFormData({ ...formData, scope: e.target.value })
                   }
-                  className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 bg-white"
+                  className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#43729b]/20 focus:border-[#43729b] bg-white"
                 >
                   <option value="villa">Luxury Villa / Private Estate</option>
                   <option value="penthouse">Sky Duplex Penthouse</option>
@@ -163,7 +163,7 @@ export default function ConsultationModal({
                   onChange={(e) =>
                     setFormData({ ...formData, notes: e.target.value })
                   }
-                  className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500"
+                  className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#43729b]/20 focus:border-[#43729b]"
                 />
               </div>
 
