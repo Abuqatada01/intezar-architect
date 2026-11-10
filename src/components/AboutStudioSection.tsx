@@ -1,12 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Sparkles,
-  ArrowUpRight,
-  ArrowDownRight,
   ArrowRight,
+  Maximize2,
+  X,
+  Building2,
+  Clock,
+  Award,
+  Percent,
 } from "lucide-react";
 
 interface AboutStudioSectionProps {
@@ -16,24 +21,37 @@ interface AboutStudioSectionProps {
 export default function AboutStudioSection({
   onOpenConsultation,
 }: AboutStudioSectionProps) {
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [activePhoto, setActivePhoto] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  const photos = [
+    {
+      src: "/intezar/intezar-with-hafeez.png",
+      alt: "Architect Intezar Ahmed with World-Renowned Architect Hafeez Contractor (13 Years Associated)",
+      caption: "13 Years with World-Renowned Ar. Hafeez Contractor",
+      focal: "object-[50%_15%]",
+      subCaption: "13 Years of Collaboration with Padma Bhushan Ar. Hafeez Contractor",
+    },
+    {
+      src: "/intezar/intezar-ahmed.png",
+      alt: "Architect Intezar Ahmed — Principal Atelier (20+ Years Practice)",
+      caption: "Architect Intezar Ahmed — 20+ Years Practice",
+      focal: "object-top",
+      subCaption: "Direct Authorship, PCATP Licensed & Turnkey Leadership",
+    },
+  ];
 
   return (
     <section
       id="about-studio"
-      className="py-16 sm:py-24 lg:py-32 bg-[#f8f9fb] text-slate-900 border-b border-slate-200/80 select-none overflow-hidden"
+      className="py-16 sm:py-24 lg:py-32 bg-white text-slate-900 border-b border-slate-200/80 select-none overflow-hidden"
     >
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16 sm:space-y-24">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16 sm:space-y-24">
         {/* Visitor Journey Stage Tag */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-slate-200/80 border border-slate-300/80 text-slate-800 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-3 sm:mb-4">
+          <div className="inline-flex items-center gap-2 bg-slate-100 border border-slate-200 text-slate-800 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-3 sm:mb-4">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>09 · PERSONAL TRUST</span>
+            <span>03 · PERSONAL TRUST & LEADERSHIP</span>
             <span className="text-slate-400">•</span>
             <span className="italic">“Who is behind this? Can I trust them?”</span>
           </div>
@@ -46,215 +64,254 @@ export default function AboutStudioSection({
         </div>
 
         {/* =========================================================================
-            BLOCK 1: ABOUT US REDESIGN (MATCHING IMAGE 1 - MOBILE ADAPTIVE)
-            Left: Dark Card ("Strategy first. Always.")
-            Right: Portrait Card with 2 Floating Number Cards at Bottom
+            BLOCK 1: EDITORIAL ABOUT REDESIGN (LIGHT THEME)
+            Left: Large Rounded Image Card with Carousel Indicator & Caption Below
+            Right: Personal Greeting, Bio Story, 4 Value Cards (Clarity, Craft, Candour, Calm), & "Book a call →" Button
             ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 items-stretch">
-          {/* ================= LEFT CARD (DARK CARD) ================= */}
-          <div className="lg:col-span-6 bg-[#151518] text-white rounded-[24px] sm:rounded-[36px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between shadow-xl border border-white/5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          {/* ================= LEFT COLUMN: LARGE PHOTO CARD ================= */}
+          <div className="lg:col-span-5 flex flex-col items-center">
+            {/* Image Container with Rounded Corners & Subtle Border */}
+            <div className="relative w-full rounded-[24px] sm:rounded-[36px] overflow-hidden bg-slate-100 border border-slate-200/90 shadow-[0_10px_40px_rgba(0,0,0,0.06)] min-h-[500px] sm:min-h-[580px] lg:min-h-[640px] flex flex-col justify-between group">
+              {/* Full-Bleed Photograph */}
+              <Image
+                src={photos[activePhoto].src}
+                alt={photos[activePhoto].alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className={`object-cover ${photos[activePhoto].focal} group-hover:scale-[1.02] transition-transform duration-700 ease-out cursor-pointer`}
+                priority
+                onClick={() => setIsLightboxOpen(true)}
+              />
+
+              {/* Top Bar: Expand / Fullscreen Trigger */}
+              <div className="relative z-10 p-4 sm:p-5 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 bg-black/50 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full border border-white/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Verified Atelier</span>
+                </span>
+
+                <button
+                  onClick={() => setIsLightboxOpen(true)}
+                  title="View full image in high resolution"
+                  className="inline-flex items-center gap-1.5 bg-black/50 hover:bg-black/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1.5 rounded-full border border-white/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">View Large</span>
+                </button>
+              </div>
+
+              {/* Bottom Subtle Gradient for Pill Contrast */}
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+
+              {/* Floating Slide Indicator Pill matching Reference Image */}
+              <div className="relative z-10 pb-5 flex items-center justify-center gap-2">
+                <div className="bg-black/50 hover:bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 flex items-center gap-2 transition-all shadow-lg">
+                  {photos.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActivePhoto(idx);
+                      }}
+                      aria-label={`Switch to photo ${idx + 1}`}
+                      className={`transition-all duration-300 rounded-full cursor-pointer ${
+                        activePhoto === idx
+                          ? "w-6 h-2 bg-white"
+                          : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Caption Underneath Image matching Reference Image ("Morning ritual" style) */}
+            <p className="text-xs sm:text-[13px] font-mono text-slate-500 text-center mt-3 tracking-wide">
+              {photos[activePhoto].caption}
+            </p>
+          </div>
+
+          {/* ================= RIGHT COLUMN: GREETING, STORY, 4 CARDS & CTA ================= */}
+          <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
-              {/* Eyebrow Tag with Amber Sparkle */}
-              <div className="inline-flex items-center gap-2 text-amber-400 text-xs font-mono font-medium mb-4 sm:mb-6">
-                <span>✦</span>
-                <span className="tracking-wide">About the architect</span>
+              {/* Heading: Hi, I'm Intezar. */}
+              <div className="mb-6 sm:mb-8">
+                {/* Prestige Pedigree Badge */}
+                <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/90 text-amber-900 text-[11px] sm:text-xs font-mono font-medium px-3.5 py-1.5 rounded-full mb-3.5 shadow-xs">
+                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shrink-0" />
+                  <span className="tracking-wide">13 Years with Ar. Hafeez Contractor • 20+ Years Practice</span>
+                </div>
+
+                <h3 className="text-3xl sm:text-5xl lg:text-[54px] font-heading font-bold text-slate-950 tracking-[-0.03em] leading-[1.08] mb-2 sm:mb-3">
+                  Hi, I&apos;m Intezar.
+                </h3>
+                <p className="text-xl sm:text-2xl lg:text-[27px] font-heading font-medium text-slate-800 tracking-[-0.02em] leading-snug">
+                  An architect who believes good work feels inevitable.
+                </p>
               </div>
 
-              {/* Main Headline */}
-              <h3 className="text-2xl sm:text-4xl lg:text-[44px] font-heading font-bold text-white tracking-tight leading-[1.15] mb-3 sm:mb-5">
-                Strategy first.
-                <br />
-                <span className="text-slate-300 font-medium">Always.</span>
-              </h3>
+              {/* Story Bio Paragraphs */}
+              <div className="space-y-4 text-sm sm:text-[15px] text-slate-600 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">
+                <p>
+                  With over <strong className="text-slate-900 font-semibold">20+ years of comprehensive architectural practice</strong> — including <strong className="text-slate-900 font-semibold">13 formative years working alongside world-renowned master architect Hafeez Contractor (Padma Bhushan)</strong> — I lead an atelier dedicated to bespoke luxury residences, private villas, and landmark estates.
+                </p>
+                <p>
+                  Collaborating for over a decade with Ar. Hafeez Contractor on monumental, complex developments instilled a rare standard of structural daring, civic scale, and flawless spatial planning. Today, I bring that world-class institutional discipline directly into private residences: cantilevered concrete slabs, 40-foot column-free spans, and microclimate solar orientation.
+                </p>
+                <p>
+                  I accept only a limited number of residential commissions each year so that every line drawn, every structural audit, and every on-site detail is personally directed by me.
+                </p>
+              </div>
 
-              {/* Description Paragraph */}
-              <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
-                I lead every architectural and interior project with direct personal oversight, combining structural rigor and spatial sensitivity to build residences that endure for generations.
-              </p>
+              {/* 4 Experience Metric Cards (2x2 Grid) in Light Theme matching Reference Image */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 max-w-2xl mb-8 sm:mb-10">
+                {/* Card 1: 20+ Years Total Practice */}
+                <div className="bg-[#f8f9fb] hover:bg-slate-100/80 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
+                      20<span className="text-[#f59e0b]">+</span>
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shrink-0">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-heading font-semibold text-slate-900 mb-0.5">
+                      Years Total Practice
+                    </h4>
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                      Two decades of master architectural leadership.
+                    </p>
+                  </div>
+                </div>
 
-              {/* Action Buttons Row */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-6 sm:mb-10">
-                <button
-                  onClick={onOpenConsultation}
-                  className="bg-[#f59e0b] hover:bg-[#d97706] text-slate-950 font-semibold px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-[13px] tracking-wide inline-flex items-center gap-1.5 transition-all shadow-md active:scale-98 cursor-pointer"
-                >
-                  <span>More About Me</span>
-                  <ArrowDownRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </button>
+                {/* Card 2: 13 Years with Hafeez Contractor (Special Highlight) */}
+                <div className="bg-gradient-to-br from-amber-50/90 to-slate-50 hover:from-amber-100/70 hover:to-slate-100 rounded-2xl p-4 sm:p-5 border border-amber-300/80 shadow-[0_4px_12px_rgba(245,158,11,0.08)] transition-all duration-200 flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
+                      13<span className="text-amber-600 font-bold text-base sm:text-xl ml-0.5">Yrs</span>
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center border border-amber-300/80 shrink-0">
+                      <Award className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-heading font-bold text-slate-950 mb-0.5">
+                      With Ar. Hafeez Contractor
+                    </h4>
+                    <p className="text-[11px] sm:text-xs text-slate-600 font-normal leading-relaxed">
+                      13 years with world-renowned master architect.
+                    </p>
+                  </div>
+                </div>
 
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="bg-white hover:bg-slate-100 text-slate-950 font-semibold px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-[13px] tracking-wide inline-flex items-center gap-1.5 transition-all shadow-sm active:scale-98 cursor-pointer"
-                >
-                  <span>See Services</span>
-                  <ArrowDownRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </button>
+                {/* Card 3: 30+ Projects Completed */}
+                <div className="bg-[#f8f9fb] hover:bg-slate-100/80 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
+                      30<span className="text-[#f59e0b]">+</span>
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shrink-0">
+                      <Building2 className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-heading font-semibold text-slate-900 mb-0.5">
+                      Projects Completed
+                    </h4>
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                      Luxury residences & bespoke private villas.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 4: 99% Satisfaction Level */}
+                <div className="bg-[#f8f9fb] hover:bg-slate-100/80 rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none">
+                      99<span className="text-[#f59e0b]">%</span>
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shrink-0">
+                      <Percent className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-heading font-semibold text-slate-900 mb-0.5">
+                      Satisfaction Level
+                    </h4>
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-light leading-relaxed">
+                      Zero handover disputes and verified audits.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Inset Featured Case Card at Bottom of Dark Card */}
-            <div className="bg-[#212126] rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/10 flex items-center gap-3 sm:gap-4 transition-all hover:border-amber-400/40 group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl overflow-hidden relative shrink-0 bg-slate-800">
-                <Image
-                  src="/assets/after.jpg"
-                  alt="Featured architectural project"
-                  fill
-                  sizes="64px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            {/* CTA Button matching Reference Image ("Book a call →") */}
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                onClick={onOpenConsultation}
+                className="inline-flex items-center gap-2 bg-slate-950 hover:bg-black text-white text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
+              >
+                <span>Book a call</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-              <div className="flex-1 min-w-0">
-                <h4 className="text-xs sm:text-sm font-heading font-medium text-white truncate group-hover:text-amber-300 transition-colors">
-                  Bespoke Cantilever Villa — DHA Phase 6
-                </h4>
-                <button
-                  onClick={() => scrollToSection("case-study")}
-                  className="text-[11px] sm:text-xs text-amber-400 hover:text-amber-300 font-medium inline-flex items-center gap-1 mt-0.5 cursor-pointer"
-                >
-                  <span>See Details</span>
-                  <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* ================= RIGHT CARD (PORTRAIT WITH 2 FLOATING NUMBER CARDS - MOBILE ADAPTIVE) ================= */}
-          <div className="lg:col-span-6 relative rounded-[24px] sm:rounded-[36px] overflow-hidden bg-slate-900 border border-slate-200/80 shadow-xl min-h-[420px] sm:min-h-[500px] flex flex-col justify-end group">
-            {/* Full-Bleed Portrait Background */}
-            <Image
-              src="/intezar/intezar-ahmed.png"
-              alt="Architect Intezar Ahmed"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-              priority
-            />
-
-            {/* Gradient Overlay for card legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
-
-            {/* 2 Floating White Number Cards Overlaid at Bottom (Side-by-side on Mobile & Desktop) */}
-            <div className="relative z-10 p-3 sm:p-6 lg:p-7 grid grid-cols-2 gap-2 sm:gap-4">
-              {/* Floating Card 1 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-xl border border-white flex flex-col justify-between">
-                <div>
-                  <div className="text-xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none mb-1 flex items-baseline gap-0.5">
-                    <span>11</span>
-                    <span className="text-[#f59e0b] font-bold text-base sm:text-2xl">+</span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-slate-600 font-medium leading-tight line-clamp-1">
-                    Years of Practice
-                  </p>
-                </div>
-                <div className="pt-2 sm:pt-3 mt-2 sm:mt-3 border-t border-slate-100 flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-slate-500">
-                  <span className="text-emerald-600 font-bold shrink-0">↑</span>
-                  <span className="truncate">PCATP Licensed</span>
-                </div>
-              </div>
-
-              {/* Floating Card 2 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-xl border border-white flex flex-col justify-between">
-                <div>
-                  <div className="text-xl sm:text-3xl font-heading font-bold text-slate-950 tracking-tight leading-none mb-1 flex items-baseline gap-0.5">
-                    <span>99</span>
-                    <span className="text-[#f59e0b] font-bold text-base sm:text-2xl">%</span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-slate-600 font-medium leading-tight line-clamp-1">
-                    Satisfaction Rate
-                  </p>
-                </div>
-                <div className="pt-2 sm:pt-3 mt-2 sm:mt-3 border-t border-slate-100 flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-slate-500">
-                  <span className="text-emerald-600 font-bold shrink-0">↑</span>
-                  <span className="truncate">Zero Junior Delegation</span>
-                </div>
-              </div>
+              <Link
+                href="/about"
+                className="text-xs sm:text-sm font-mono text-slate-600 hover:text-slate-950 underline underline-offset-4 decoration-slate-300 hover:decoration-slate-900 transition-colors"
+              >
+                Read full studio biography →
+              </Link>
             </div>
           </div>
         </div>
-
-        {/* =========================================================================
-            BLOCK 2: EXPERIENCE REDESIGN (MATCHING IMAGE 2 - MOBILE ADAPTIVE)
-            Centered Headline with Gold Sparkle
-            3 Large Number Cards in a Row
-            ========================================================================= */}
-        <div className="pt-4 sm:pt-10">
-          {/* Centered Heading matching reference image */}
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14 px-2">
-            <h3 className="text-xl sm:text-3xl lg:text-4xl font-heading font-bold text-slate-900 tracking-tight leading-snug flex items-center justify-center gap-2 flex-wrap">
-              <span>The most-trusted architectural studio for building success</span>
-              <span className="text-amber-500">✨</span>
-            </h3>
-          </div>
-
-          {/* 3 Large Number Cards in a Row matching reference image 1:1 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {/* Card 1: 35+ / Projects */}
-            <div className="bg-white rounded-[20px] sm:rounded-[28px] p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="text-4xl sm:text-5xl lg:text-[68px] font-heading font-bold text-slate-950 tracking-tight leading-none mb-3 sm:mb-4">
-                  35+
-                </div>
-                <p className="text-xs sm:text-base text-slate-700 font-normal leading-snug">
-                  luxury residences & estates
-                  <br />
-                  designed & delivered
-                </p>
-              </div>
-              <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-mono text-slate-400">
-                PCATP, CDA & RDA Municipal Blueprint Sets
-              </div>
-            </div>
-
-            {/* Card 2: 11+ / Years Experience */}
-            <div className="bg-white rounded-[20px] sm:rounded-[28px] p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="text-4xl sm:text-5xl lg:text-[68px] font-heading font-bold text-slate-950 tracking-tight leading-none mb-3 sm:mb-4">
-                  11+
-                </div>
-                <p className="text-xs sm:text-base text-slate-700 font-normal leading-snug">
-                  years of continuous practice
-                  <br />
-                  in high-end residential architecture
-                </p>
-              </div>
-              <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-mono text-slate-400">
-                Active Practice Across Islamabad & Overseas
-              </div>
-            </div>
-
-            {/* Card 3: 99% / Satisfaction Rate */}
-            <div className="bg-white rounded-[20px] sm:rounded-[28px] p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="text-4xl sm:text-5xl lg:text-[68px] font-heading font-bold text-slate-950 tracking-tight leading-none mb-3 sm:mb-4">
-                  99%
-                </div>
-                <p className="text-xs sm:text-base text-slate-700 font-normal leading-snug">
-                  client satisfaction rate
-                  <br />
-                  with zero handover disputes
-                </p>
-              </div>
-              <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-mono text-slate-400">
-                Verified Milestone Sign-Offs & Site Audits
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Consultation CTA */}
-        {onOpenConsultation && (
-          <div className="pt-2 flex justify-center">
-            <button
-              onClick={onOpenConsultation}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-black text-white px-8 py-3.5 sm:py-4 rounded-full text-xs font-semibold tracking-wider uppercase shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer text-center"
-            >
-              <span>Schedule Direct Consultation with Intezar</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* High-Resolution Fullscreen Lightbox Modal */}
+      {isLightboxOpen && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div
+            className="relative max-w-4xl w-full max-h-[92vh] flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsLightboxOpen(false)}
+              aria-label="Close modal"
+              className="absolute -top-12 right-0 sm:right-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* High-Resolution Uncropped Image */}
+            <div className="relative w-full aspect-[3/4] max-h-[80vh] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-slate-950">
+              <Image
+                src={photos[activePhoto].src}
+                alt={photos[activePhoto].alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 85vw"
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {/* Lightbox Caption */}
+            <div className="mt-4 text-center text-white space-y-1">
+              <h4 className="text-base sm:text-lg font-heading font-semibold tracking-tight">
+                {photos[activePhoto].caption}
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-400 font-mono">
+                {photos[activePhoto].subCaption}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

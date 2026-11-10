@@ -92,7 +92,7 @@ const disciplines = [
       "Landscape and entrance gateway synthesis",
     ],
     image: "/assets/archline-hero.jpg",
-    stat: "11+",
+    stat: "20+",
     statLabel: "Years facade mastery",
   },
 ];

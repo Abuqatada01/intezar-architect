@@ -73,7 +73,7 @@ export default function AboutPage() {
                     Intezar Ahmed
                   </h2>
                   <p className="text-xs text-white/80 font-mono mt-1">
-                    PCATP Registered • 11+ Years Architectural Practice
+                    PCATP Registered • 20+ Years Practice (13 Yrs with Ar. Hafeez Contractor)
                   </p>
                 </div>
               </div>
@@ -86,11 +86,11 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Compass className="w-4 h-4 text-sky-600 shrink-0" />
-                  <span>5D BIM Digital Pre-Coordination Certified</span>
+                  <span>13 Years with World-Renowned Ar. Hafeez Contractor</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Award className="w-4 h-4 text-amber-600 shrink-0" />
-                  <span>Bespoke Residential & Commercial Distinctions</span>
+                  <span>20+ Years Residential & Master-Plan Leadership</span>
                 </div>
               </div>
             </div>
@@ -106,10 +106,34 @@ export default function AboutPage() {
                 </h3>
                 <div className="space-y-5 text-sm sm:text-base text-slate-600 font-light leading-relaxed">
                   <p>
-                    Over eleven years of continuous practice across Islamabad, Lahore, and international commissions, Architect Intezar Ahmed has developed a reputation for rigorous spatial purity. While many design firms delegate client projects to junior drafting pools, Intezar maintains strict direct authorship on every project.
+                    Over <strong>20+ years of comprehensive architectural practice</strong> — including <strong>13 formative years working directly alongside world-renowned master architect Hafeez Contractor (Padma Bhushan)</strong> — Architect Intezar Ahmed has developed an uncompromising reputation for structural audacity and spatial purity. While many design firms delegate client projects to junior drafting pools, Intezar maintains strict direct authorship on every project.
                   </p>
                   <p>
-                    Every residential villa is tailored specifically to its plot topography, solar path, wind direction, and the living rituals of the family. From 40-foot post-tensioned column-free spans to acoustically insulated travertine hearths, our work balances structural audacity with peaceful domestic warmth.
+                    Collaborating on monumental developments with Ar. Hafeez Contractor established a rare standard for civic scale, engineering precision, and rapid execution. Today, this mastery is brought directly into private villas: 40-foot post-tensioned column-free spans, microclimate solar orientation, and acoustically insulated travertine hearths that balance structural drama with peaceful domestic warmth.
+                  </p>
+                </div>
+              </div>
+
+              {/* Mentorship & Dialogue Feature Card */}
+              <div className="relative rounded-[28px] overflow-hidden bg-slate-900 border border-slate-200/80 shadow-xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8 group">
+                <div className="relative w-full md:w-56 aspect-[3/4] rounded-2xl overflow-hidden shrink-0 bg-slate-950 border border-white/10 shadow-lg">
+                  <Image
+                    src="/intezar/intezar-with-hafeez.png"
+                    alt="Architect Intezar Ahmed with Padma Bhushan Ar. Hafeez Contractor"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 240px"
+                    className="object-cover object-[50%_15%] group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="text-white space-y-3 flex-1">
+                  <div className="inline-flex items-center gap-2 bg-amber-400/20 text-amber-300 text-[11px] font-mono px-3 py-1 rounded-full border border-amber-400/30">
+                    <span>✦ 13 YEARS COLLABORATION</span>
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-heading font-semibold text-white tracking-tight">
+                    13 Years with World-Renowned Ar. Hafeez Contractor
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                    Over thirteen years of direct collaboration on complex landmark projects with Padma Bhushan Ar. Hafeez Contractor, South Asia’s most celebrated architect. Grounded in institutional structural discipline, civic scale, and timeless residential design.
                   </p>
                 </div>
               </div>
@@ -186,18 +210,18 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <span className="text-3xl sm:text-4xl font-heading font-bold text-amber-400 block">
-                      11+
+                      20+
                     </span>
                     <span className="text-xs text-slate-300 font-light mt-1 block">
-                      Years Continuous Practice
+                      Years Total Practice
                     </span>
                   </div>
                   <div>
                     <span className="text-3xl sm:text-4xl font-heading font-bold text-amber-400 block">
-                      100%
+                      13 Yrs
                     </span>
                     <span className="text-xs text-slate-300 font-light mt-1 block">
-                      Direct Principal Audits
+                      With Ar. Hafeez Contractor
                     </span>
                   </div>
                   <div>

@@ -52,47 +52,47 @@ export default function Home() {
         />
       </ScrollReveal>
 
-      {/* 3. Project Transformation / Case Study — proof of capability */}
+      {/* 3. About the Studio & Principal Architect — personal trust & leadership */}
+      <ScrollReveal>
+        <AboutStudioSection
+          onOpenConsultation={() => setIsConsultOpen(true)}
+        />
+      </ScrollReveal>
+
+      {/* 4. Project Transformation / Case Study — proof of capability */}
       <ScrollReveal>
         <CaseStudySection />
       </ScrollReveal>
 
-      {/* 4. Services — relevance to visitor's needs */}
+      {/* 5. Services — relevance to visitor's needs */}
       <ScrollReveal>
         <ServicesExpertiseSection
           onOpenConsultation={() => setIsConsultOpen(true)}
         />
       </ScrollReveal>
 
-      {/* 5. Why Choose Us — differentiation */}
+      {/* 6. Why Choose Us — differentiation */}
       <ScrollReveal>
         <WhyChooseUsSection
           onOpenConsultation={() => setIsConsultOpen(true)}
         />
       </ScrollReveal>
 
-      {/* 6. Testimonials / Reviews — social proof */}
+      {/* 7. Testimonials / Reviews — social proof */}
       <ScrollReveal>
         <TestimonialsProofSection />
       </ScrollReveal>
 
-      {/* 7. Process — clarity and risk reduction */}
+      {/* 8. Process — clarity and risk reduction */}
       <ScrollReveal>
         <ProcessSection
           onOpenConsultation={() => setIsConsultOpen(true)}
         />
       </ScrollReveal>
 
-      {/* 8. Budget & Timeline — practical concerns */}
+      {/* 9. Budget & Timeline — practical concerns */}
       <ScrollReveal>
         <BudgetTimelineSection
-          onOpenConsultation={() => setIsConsultOpen(true)}
-        />
-      </ScrollReveal>
-
-      {/* 9. About the Studio — personal trust */}
-      <ScrollReveal>
-        <AboutStudioSection
           onOpenConsultation={() => setIsConsultOpen(true)}
         />
       </ScrollReveal>

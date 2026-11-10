@@ -23,7 +23,7 @@ export default function MeetArchitectSection({
 }: MeetArchitectSectionProps) {
   const credentials = [
     { label: "Credentials", value: "Registered Architect (PCATP)" },
-    { label: "Experience", value: "11+ Years in Practice" },
+    { label: "Experience", value: "20+ Years Practice (13 Yrs with Ar. Hafeez Contractor)" },
     { label: "Track Record", value: "100+ Delivered Landmarks" },
     { label: "Education", value: "B.Arch with Architectural Honors" },
   ];

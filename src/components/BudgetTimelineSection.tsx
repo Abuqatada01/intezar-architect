@@ -85,7 +85,7 @@ export default function BudgetTimelineSection({
         <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-flex items-center gap-2 bg-sky-100/80 border border-sky-200 text-sky-800 px-3.5 py-1 rounded-full text-xs font-mono font-medium mb-3 sm:mb-4">
             <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-            <span>08 · PRACTICAL CONCERNS</span>
+            <span>09 · PRACTICAL CONCERNS</span>
             <span className="text-slate-400">•</span>
             <span className="italic">“What will it cost? How long will it take?”</span>
           </div>
